@@ -1,0 +1,119 @@
+
+	// start .sPromocode
+	.sPromocode {
+		@include media-breakpoint-up(sm) {
+			--sPT: #{rem(140)};
+			--sPB: #{rem(50)};
+			--px: #{rem(40)};	
+		}
+		@include media-breakpoint-up(xl) {
+			--px: #{rem(110)};
+		}
+		--px: #{rem(20)};
+		&__inner{
+			@include media-breakpoint-up(sm) {
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				text-align: left;
+			}
+			text-align: center;
+			max-width: rem(1050);
+			margin-left: auto;
+			background: #F2F2F2;
+			padding: rem(37) var(--px);
+			position: relative;
+			@include media-breakpoint-up(lg) {
+				
+				padding-left: rem(500);
+			}
+			@include media-breakpoint-up(xl) {
+
+				padding-left: rem(300);
+			}
+			margin-bottom: rem(28);
+			img{
+				max-width: rem(564);
+				@include media-breakpoint-up(lg) {
+					display: block;
+				}
+				display: none;
+				@include media-breakpoint-up(xl) {
+					left: rem(-400);
+				}
+				left: rem(-150);
+				top: rem(-70);
+				position: absolute;
+			}
+		}
+		p{
+			margin-left: auto;
+			@include media-breakpoint-up(lg) {
+				max-width: rem(550);
+				padding-right: var(--px);
+			}
+			@include media-breakpoint-up(xl) {
+				max-width: rem(750);
+			}
+		}
+		&__price{
+			&--old{
+				font-size: rem(50);
+				color: #3A3A39;
+				margin-bottom: rem(10);
+				position: relative;
+				line-height: 1;
+				display: inline-block;
+				&::before{
+					content: '';
+					transform: rotate(25deg);
+					width: 130%;
+					height: rem(6);
+					position: absolute;
+					top: rem(20);
+					left: -10%;
+					background-color: $primary;
+				}
+			}
+			&--new{
+				font-size: rem(94);
+				font-weight: bold;
+				color: $primary;
+				line-height: 1;
+			}
+		}
+		&__links{
+			text-align: center;
+		}
+		&__btn{
+			@extend .btn;
+			background: #F5DCC4;
+			border: 1px solid #F5DCC4;
+			margin-bottom: rem(17);
+			width: rem(200);
+			@include media-breakpoint-up(sm) {
+				margin-top: 0;
+			}
+			margin-top: 2rem;
+		}
+		&__link{
+			font-size: rem(20);
+			@extend .tdu;
+			font-weight: bold;
+		}
+		p{
+			font-size: $small;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sPromocode

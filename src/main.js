@@ -2,4 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+
+import { svgSpritePlugin } from 'vue-svg-sprite'
+
+createApp(App).use(router, svgSpritePlugin).mount('#app') 

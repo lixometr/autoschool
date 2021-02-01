@@ -1,0 +1,47 @@
+
+	// start .Footer
+	.main-wrapper--home{
+		.Footer{
+			border-top: 1px solid #BDBDBD;
+
+		}
+	}
+	.Footer {
+		@include media-breakpoint-up(sm) {
+			--sPT: #{rem(60)};
+			--sPB: #{rem(50)};
+			--px: #{rem(40)};	
+		}
+		&__links{
+			margin-bottom: rem(58);
+		}
+		p{
+			font-size: 12px;
+			margin-bottom: rem(30);
+		}
+		ul{
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			@include roww(rem(26));
+			font-size: rem(16);
+			li{
+				margin-bottom: rem(20);
+			}
+			a{
+				@extend .text-body;
+				@extend .tdu;
+			}
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.Footer

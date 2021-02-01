@@ -1,0 +1,286 @@
+
+	// start .TopNav
+	.main-wrapper--home{
+		.TopNav{
+			position: absolute;
+			.logo{
+				[fill="#3A3A39"]{
+					fill: #fff !important;
+				}
+			}
+		}
+	}
+	.TopNav {
+		.logo{
+			width: rem(198);
+			max-width: 100%;
+		}
+		position: relative;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 0;
+		@include media-breakpoint-up(lg) {
+		--sPT: #{rem(40)};
+		--sPB: #{rem(40)};
+	}
+	--sPT: #{rem(20)};
+	--sPB: #{rem(20)};
+		.row{
+			align-items: center;
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-primary;
+			@include media-breakpoint-up(lg) {
+				width: rem(152);
+			}
+			font-size: rem(20);
+			padding: rem(7) rem(10);
+			border-radius: 0;
+		}
+		.row{
+			--bs-gutter-x: 20px;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.TopNav
+
+.menu{
+	@include media-breakpoint-up(xl) {
+		display: flex;
+	}
+	@include media-breakpoint-up(xxl) {
+		// @include roww(44px);
+		--bs-gutter-x: 44px;
+	}
+	@include roww(24px);
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0;
+	list-style: none;
+	&__link{
+		font-weight: 600;
+		font-size: rem(20);
+		margin-bottom: 0;
+		border-bottom: 1px solid transparent;
+		&:hover,
+		&.active{
+			border-color: currentColor;
+		}
+	}
+}
+
+.lang-block{
+	position: relative;
+	border: 1px solid rgba($color: #fff, $alpha: .1);
+	&__img-wrap{
+		width: rem(77);
+		height: rem(47);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		padding-left: rem(15);
+	}
+	&__toggle{
+		position: relative;
+		background-image: url(assets/img/chevron-down.svg);
+		background-repeat: no-repeat;
+		background-position: calc(100% - 14px) center;
+	}
+	&__dropdown{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 100%;
+		background-color: #ffffff;
+		@include mt;
+		visibility: hidden;
+		transform-origin: top center;
+		// transform: scaleY(0);
+		opacity: 0;
+		z-index: -1;
+
+	}
+	&:hover &__dropdown{
+		visibility: visible;
+		// transform: scaleY(1);
+		opacity: 1;
+		z-index: 4;
+	}
+	&__dropdown-item{
+		@include mt;
+		border-bottom: 1px solid rgba($color: $primary, $alpha: .1);
+		&:hover{
+			background-color: rgba($color: $primary, $alpha: .5);
+		}
+	}
+}
+
+
+
+$h: em(2);
+
+.toggle-menu-mobile {
+	display: block;
+	height: $h* 12;
+	position: relative;
+	color: $primary;
+	font-size: 32px;
+	width: 1em;
+	cursor: pointer;
+	&.on {
+		color: #ffffff;
+	}
+
+	span:after,
+	span:before {
+		content: "";
+		position: absolute;
+		left: 0;
+	}
+
+	span {
+		@include a-cent(y);
+	}
+
+	span:before {
+
+
+		top: $h * 2;
+	}
+
+	span:after {
+		bottom: $h * 2;
+	}
+
+	span { 
+		display: block;
+	}
+
+	span,
+	span:after,
+	span:before {
+		// width: 32px;
+		width: 1em;
+		height: $h;
+		background-color: currentColor;
+		transition: all 0.3s;
+		backface-visibility: hidden;
+		border-radius: 6px;
+		transform-origin: 50% 50%;
+	}
+
+	// &.on {
+	// 	// opacity: 0;
+	// }
+
+	&.on span {
+		background-color: transparent;
+	}
+
+	&.on span:after,
+	&.on span:before {
+
+		top: 0;
+		bottom: 0;
+		
+	}
+
+	&.on span:before {
+		transform: rotate3d(0,0,1, 45deg);
+	}
+
+	&.on span:after {
+		transform: rotate3d(0,0,1, -45deg);
+	}
+}
+
+
+.menu-mobile {
+	position: fixed !important;
+	z-index: 999;
+	max-width: 85%;
+	height: calc(var(--vh, 1vh) * 100);
+	width: 280px;
+	top: 0;
+	// left: 0;
+	right: 0;
+	&:not(.active){
+		transform: translate3d(120%, 0,0);
+		opacity: 0;
+
+	}
+	@include mt(.6);
+	will-change: transform;
+
+	&__inner {
+		background-color: $body-color;
+		padding: rem(20) 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		height: 100%;
+	}
+
+	&.active { 
+		.toggle-menu-mobile {
+			opacity: 1;
+		}
+	}
+
+	.toggle-menu-mobile {
+		// position: relative;
+		cursor: pointer;
+		margin-left: -15%;
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		right: auto;
+		color: #FFF;
+		top: 10px;
+		z-index: 9999;
+		background-color: transparent;
+
+		span,
+		span:after,
+		span:before {
+			background-color: #FFF;
+		}
+
+		&.on {
+			opacity: 1;
+
+			span {
+				background-color: transparent;
+			}
+		}
+	}
+
+	ul {
+		position: relative;
+	}
+
+	li {
+		display: block;
+		margin: 0;
+		border-top: 1px solid rgba(255, 255, 255, .13);
+
+		a {
+			// font-size: 16px;
+
+			padding: 10px;
+			display: block;
+
+		}
+	}
+}

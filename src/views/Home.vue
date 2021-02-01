@@ -1,24 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main-wrapper main-wrapper--home">
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 
-
-    <div class="test_class">123</div>
+    <TopNav/>
+    <HeaderBlock/>
+    <SRegister/>
+    <SAbout/>
+    <SWhatWillLearn/>
+    <SPromocode/>
+    <SModules/>
+    <SReady/>
+    <Footer/>
 
   </div>
 </template>
 
-<style scoped src="../assets/style/test.css"></style>
+<style  ></style>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+ 
+import TopNav from '@/components/TopNav.vue'
+import HeaderBlock from '@/components/HeaderBlock.vue'
+import SRegister from '@/components/SRegister.vue'
+import SAbout from '@/components/SAbout.vue'
+import SWhatWillLearn from '@/components/SWhatWillLearn.vue'
+import SPromocode from '@/components/SPromocode.vue'
+import SModules from '@/components/SModules.vue'
+import SReady from '@/components/SReady.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components: { 
+    TopNav,
+    HeaderBlock,
+    SRegister,
+    SAbout,
+    SWhatWillLearn,
+    SPromocode,
+    SModules,
+    SReady,
+    Footer,
   }
 }
 </script>
