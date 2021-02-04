@@ -160,7 +160,7 @@ $position-values: (0: 0,
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white !default;
+$body-bg: #EAF2F4 !default;
 $body-color: #3A3A39 !default;
 $body-text-align: null !default;
 
@@ -347,8 +347,8 @@ $font-sizes: (1: $h1-font-size,
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
-$headings-font-weight: 500 !default;
-$headings-line-height: 1.2 !default;
+$headings-font-weight: normal !default;
+$headings-line-height: 1.5 !default;
 $headings-color: null !default;
 
 // scss-docs-start display-headings
@@ -456,7 +456,7 @@ $table-variants: ("primary": scale-color($primary, $table-bg-scale),
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: .375rem !default;
+$input-btn-padding-y: .938rem !default;
 $input-btn-padding-x: .75rem !default;
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;
@@ -556,7 +556,7 @@ $input-disabled-bg: $gray-200 !default;
 $input-disabled-border-color: null !default;
 
 $input-color: $body-color !default;
-$input-border-color: $gray-400 !default;
+$input-border-color: $primary !default;
 $input-border-width: $input-btn-border-width !default;
 $input-box-shadow: $box-shadow-inset !default;
 

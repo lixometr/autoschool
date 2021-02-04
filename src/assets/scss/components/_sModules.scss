@@ -11,7 +11,18 @@
 			margin-right: calc(var(--bs-gutter-x) / 2);
 			flex: 0 0 auto;
 			max-width: calc(12 * 100% / 12 - var(--bs-gutter-x));
-			height: rem(160);
+			padding-top: rem(15);
+			padding-bottom: rem(15 );
+			min-height: 120px;
+			@include media-breakpoint-up(sm) {
+				// height: rem(160);
+				min-height: calc(100% - var(--bs-gutter-x));
+				padding-top: 0;
+				padding-bottom: 0;
+				min-height: 1px;
+
+			}
+
 			@include media-breakpoint-up(md) {
 				height: rem(240);
 				max-width: calc(6 * 100% / 12 - var(--bs-gutter-x));
@@ -23,7 +34,6 @@
 			
 			display: flex;
 			align-items: center;
-			min-height: calc(100% - var(--bs-gutter-x));
 			margin-bottom: var(--bs-gutter-x);
 			background-color: #f2f2f2;
 

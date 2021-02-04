@@ -12,7 +12,7 @@
 							<Nav/> 
 					</div>
 					<div class="col-auto d-none d-xl-block">
-						<router-link to="/" class="menu__link">Log in</router-link>
+						<router-link to="/p" class="menu__link">Log in</router-link>
 					</div>
 					<div class="col-auto d-none d-xl-block">
 						<router-link to="/" class="TopNav__btn">Sign up</router-link>

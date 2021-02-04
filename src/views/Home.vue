@@ -1,5 +1,5 @@
 <template>
-  <div class="main-wrapper main-wrapper--home">
+  <div class="main-wrapper main-wrapper--home main-wrapper--landing">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 
     <TopNav/>

@@ -8,13 +8,13 @@
 				<router-link to="about" class="menu__link">How to use</router-link>
 			</li>
 			<li class="menu__item">
-				<router-link to="about" class="menu__link">Contacts</router-link>
+				<router-link to="/Contacts" class="menu__link">Contacts</router-link>
 			</li>
 			<li class="menu__item">
-				<router-link to="about" class="menu__link">For partners</router-link>
+				<router-link to="/partnership" class="menu__link">For partners</router-link>
 			</li>
 			<li class="menu__item">
-				<router-link to="about" class="menu__link">FAQs</router-link>
+				<router-link to="/FAQ" class="menu__link">FAQs</router-link>
 			</li>
 		</ul>
 	</nav>

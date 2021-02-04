@@ -1,0 +1,39 @@
+
+	// start .FormAside
+	.FormAside {
+		padding: rem(30) rem(34) rem(40);
+		background: #F7F7F7;
+		border-radius: 4px;
+		margin-bottom: var(--sPB);
+		&__title{
+			@extend .h4;
+			font-weight: bold;
+			margin-bottom: rem(50);
+			span{
+				color: $primary;
+			}
+		}
+		.btn{
+			margin-top: rem(24);
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.FormAside
+
+.input-wrap{
+	display: block;
+	margin-bottom: rem(14);
+	&__title{
+		font-size: 12px;
+		display: block;
+		margin-bottom: 0.5em;
+	}
+}

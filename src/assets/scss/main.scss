@@ -101,6 +101,12 @@ $output-bourbon-deprecation-warnings: false;
 @import 'components/SPromocode';
 @import 'components/SModules';
 @import 'components/SReady';
+@import 'components/SRegisterPage';
+@import 'components/sContent';
+@import 'components/SReadyPartnership';
+@import 'components/SAccordion';
+@import 'components/FormAside';
+@import 'components/DiscountLine';
 @import 'components/Footer';
 
 @import "media"; // Всегда в конце

@@ -1,6 +1,6 @@
 
 	// start .sReady
-	.sReady {
+	.SReady {
 		@include media-breakpoint-up(sm) {
 			--sPT: #{rem(30)};
 			--sPB: #{rem(120)}; 
@@ -43,8 +43,13 @@
 		&__btn{
 			@extend .btn;
 			@extend .btn-white;
-			width: rem(200);
+			min-width: rem(200);
 			border-radius: 0;
+		 	color: $primary !important;
+			 @include media-breakpoint-up(lg) {
+				 padding-left: rem(40);
+				 padding-right: rem(40);
+			 }
 		}
 		 
 	@include media-breakpoint-up(xl) {}

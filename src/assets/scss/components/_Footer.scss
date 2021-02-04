@@ -2,11 +2,11 @@
 	// start .Footer
 	.main-wrapper--home{
 		.Footer{
-			border-top: 1px solid #BDBDBD;
-
+			
 		}
 	}
 	.Footer {
+		border-top: 1px solid #BDBDBD;
 		@include media-breakpoint-up(sm) {
 			--sPT: #{rem(60)};
 			--sPB: #{rem(50)};
