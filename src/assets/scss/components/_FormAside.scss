@@ -30,10 +30,31 @@
 
 .input-wrap{
 	display: block;
-	margin-bottom: rem(14);
+	margin-bottom: rem(24);
+	position: relative;
 	&__title{
 		font-size: 12px;
 		display: block;
 		margin-bottom: 0.5em;
+	}
+}
+
+.form-control--sp-right{
+	padding-right: rem(80);
+	background-position: right 0.75rem center,
+	center right 1.75rem;
+
+}
+.btn-toggle-type{
+	cursor: pointer;
+	position: absolute;
+	right: .75rem;
+	top: rem(40);
+	&:not(.show) {
+		path{
+			&:nth-child(2){
+				opacity: .5;
+			}
+		}
 	}
 }

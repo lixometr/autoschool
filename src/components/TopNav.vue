@@ -11,13 +11,19 @@
 					<div class="col d-none d-xl-block"> 
 							<Nav/> 
 					</div>
-					<div class="col-auto d-none d-xl-block">
+					<div class="col-auto d-none d-xl-block" v-if="!cabinet">
 						<router-link to="/p" class="menu__link">Log in</router-link>
 					</div>
-					<div class="col-auto d-none d-xl-block">
-						<router-link to="/" class="TopNav__btn">Sign up</router-link>
+					<div class="col-auto d-none d-xl-block" v-if="!cabinet">
+						<router-link to="/Registration" class="TopNav__btn">Sign up</router-link>
 					</div>
-					<div class="col-auto">
+					<div class="col-auto cabinet-btn"  v-if="cabinet">
+						<div class="cabinet-btn__avatar">
+							AI
+						</div>
+						<div class="cabinet-btn__name d-none d-sm-block">Alexander I.</div>
+					</div>
+					<div class="col-auto"  >
 						<div class="lang-block">
 							<div class="lang-block__toggle">
 								<div class="lang-block__img-wrap">
@@ -75,7 +81,7 @@
 					<div class="container">
 						
 						<Nav/> 
-						<div class="row pt-4 align-items-center">
+						<div class="row pt-4 align-items-center" v-if="!cabinet">
 							<div class="col-auto ">
 								<router-link to="/" class="menu__link">Log in</router-link>
 							</div>
@@ -97,6 +103,7 @@ import Nav from '@/components/common/Nav.vue'
 
 export default {
 	name: 'TopNav',
+	props: ['cabinet'],
 	components: {
 			// SvgSprite,
 			Logo,

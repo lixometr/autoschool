@@ -27,26 +27,52 @@ const routes = [
   {
     path: '/partnership',
     name: 'Partnership',
-    // route level code-splitting
-    // this generates a separate chunk (Partnership.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "Partnership" */ '../views/Partnership.vue')
   },
   {
     path: '/FAQ',
     name: 'FAQ',
-    // route level code-splitting
-    // this generates a separate chunk (FAQ.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "FAQ" */ '../views/FAQ.vue')
   },
   {
-    path: '/Contacts',
+    path: '/contacts',
     name: 'Contacts',
-    // route level code-splitting
-    // this generates a separate chunk (Contacts.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "Contacts" */ '../views/Contacts.vue')
+  },
+  {
+    path: '/cabinet/PartnerCabinet',
+    name: '/cabinet/PartnerCabinet',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/PartnerCabinet.vue')
+  },
+  {
+    path: '/cabinet/SponsorCabinet',
+    name: '/cabinet/SponsorCabinet',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/SponsorCabinet.vue')
+  },
+  {
+    path: '/cabinet/Managers',
+    name: '/cabinet/Managers',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Managers.vue')
+  },
+  {
+    path: '/cabinet/PersonalCabinet',
+    name: '/cabinet/PersonalCabinet',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/PersonalCabinet.vue')
+  },
+  {
+    path: '/Registration',
+    name: '/Registration',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Registration.vue')
+  },
+  {
+    path: '/SetupSecurityQuestions',
+    name: '/SetupSecurityQuestions',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/SetupSecurityQuestions.vue')
+  },
+  {
+    path: '/PersonalData',
+    name: '/PersonalData',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/PersonalData.vue')
   },
 
 ]

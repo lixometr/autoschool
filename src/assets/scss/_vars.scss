@@ -65,7 +65,7 @@ $colors: ("blue": $blue,
 // scss-docs-end colors-map
 
 $primary: $blue !default;
-$secondary: $gray-600 !default;
+$secondary: #3A3A39 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
@@ -82,6 +82,7 @@ $theme-colors: ("primary": $primary,
   "danger": $danger,
   "light": $light,
   "white": $white,
+  "danger-light": #FFEBEB,
   "dark": $dark) !default;
 // scss-docs-end theme-colors-map
 
@@ -151,9 +152,14 @@ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) 
 //
 // Define the edge positioning anchors of the position utilities.
 
-$position-values: (0: 0,
-  50: 50%,
-  100: 100%) !default;
+$utilities: ("opacity": (property: opacity,
+    responsive: true,
+    values: (0: 0,
+      25: .25,
+      50: .5,
+      75: .75,
+      100: 1,
+    )));
 
 
 // Body
@@ -587,10 +593,10 @@ $input-transition: border-color .15s ease-in-out,
 box-shadow .15s ease-in-out !default;
 
 
-$form-check-input-width: 1em !default;
-$form-check-min-height: $font-size-base * $line-height-base !default;
+$form-check-input-width: 1.5em !default;
+$form-check-min-height: $form-check-input-width !default;
 $form-check-padding-left: $form-check-input-width+.5em !default;
-$form-check-margin-bottom: .125rem !default;
+$form-check-margin-bottom: rem(14) !default;
 $form-check-label-color: null !default;
 $form-check-label-cursor: null !default;
 $form-check-transition: background-color .15s ease-in-out,
@@ -600,16 +606,16 @@ box-shadow .15s ease-in-out !default;
 
 $form-check-input-active-filter: brightness(90%) !default;
 
-$form-check-input-bg: $body-bg !default;
-$form-check-input-border: 1px solid rgba(0, 0, 0, .25) !default;
+$form-check-input-bg: #fff !default;
+$form-check-input-border: 1px solid #5F97CA !default;
 $form-check-input-border-radius: .25em !default;
 $form-check-radio-border-radius: 50% !default;
 $form-check-input-focus-border: $input-focus-border-color !default;
 $form-check-input-focus-box-shadow: $input-btn-focus-box-shadow !default;
 
-$form-check-input-checked-color: $component-active-color !default;
-$form-check-input-checked-bg-color: $component-active-bg !default;
-$form-check-input-checked-border-color: $form-check-input-checked-bg-color !default;
+$form-check-input-checked-color: $primary !default;
+$form-check-input-checked-bg-color: #fff !default;
+$form-check-input-checked-border-color: #5F97CA !default;
 $form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>") !default;
 $form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>") !default;
 
@@ -1088,9 +1094,9 @@ $modal-scale-transform: scale(1.02) !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y: $spacer !default;
-$alert-padding-x: $spacer !default;
-$alert-margin-bottom: 1rem !default;
+$alert-padding-y: rem(8) !default;
+$alert-padding-x: rem(8) !default;
+$alert-margin-bottom: rem(18) !default;
 $alert-border-radius: $border-radius !default;
 $alert-link-font-weight: $font-weight-bold !default;
 $alert-border-width: $border-width !default;

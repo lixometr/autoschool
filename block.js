@@ -37,9 +37,9 @@ export default {
 	scss: `
 	// start .{blockName}
 	.{blockName} \{
-		--sPT: ;
-		--sPB: ;
-		--sTPB: ;
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
