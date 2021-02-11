@@ -2,7 +2,9 @@
 	--animate-delay: 1.2s;
 	@include media-breakpoint-up(xxl) {
 		--fontSizeBase: #{$em-base};
+		--table-x: #{rem(16)};
 	}
+	--table-x: #{rem(10)};
 	--fontSizeBase: 14px;
 	@include media-breakpoint-up(md) {
 

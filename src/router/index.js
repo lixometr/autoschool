@@ -74,6 +74,71 @@ const routes = [
     name: '/PersonalData',
     component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/PersonalData.vue')
   },
+  {
+    path: '/Partners',
+    name: '/Partners',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Partners.vue')
+  },
+  {
+    path: '/HistoryOfPayment',
+    name: '/HistoryOfPayment',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/HistoryOfPayment.vue')
+  },
+  {
+    path: '/PartnerUsers',
+    name: '/PartnerUsers',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/PartnerUsers.vue')
+  },
+  {
+    path: '/Promocode',
+    name: '/Promocode',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Promocode.vue')
+  },
+  {
+    path: '/HistoryOfStudentsPayment',
+    name: '/HistoryOfStudentsPayment',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/HistoryOfStudentsPayment.vue')
+  },
+  {
+    path: '/Documents',
+    name: '/Documents',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Documents.vue')
+  },
+  {
+    path: '/Partner',
+    name: '/Partner',
+    component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Partner.vue')
+  },
+  {
+    path: '/User', name: '/User', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/User.vue')
+  },
+  {
+    path: '/Users', name: '/Users', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Users.vue')
+  },
+  {
+    path: '/SuperAdmin', name: '/SuperAdmin', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/SuperAdmin.vue')
+  },
+  {
+    path: '/ShippingAddress', name: '/ShippingAddress', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/ShippingAddress.vue')
+  },
+  {
+    path: '/SuperAdmin2', name: '/SuperAdmin2', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/SuperAdmin2.vue')
+  },
+  {
+    path: '/Q1', name: '/Q1', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Q1.vue')
+  },
+  {
+    path: '/Q2', name: '/Q2', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Q2.vue')
+  },
+  {
+    path: '/Q3', name: '/Q3', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Q3.vue')
+  },
+  {
+    path: '/Result', name: '/Result', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Result.vue')
+  },
+  {
+    path: '/Modal', name: '/Modal', component: () => import(/* webpackChunkName: "Contacts" */ '../views/cabinet/Modal.vue')
+  },
 
 ]
 

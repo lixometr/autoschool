@@ -2,7 +2,7 @@
 	<div class="main-wrapper main-wrapper--cabinet main-wrapper--footer-without-border">
 		<!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 		<TopNav :cabinet="true"/>
-		<div class="  container pt-0">
+		<div class=" container pt-0">
 			<div class="cabinet-block p-0 bg-white">
 				<div class="cabinet-block__head p-0 border-bottom border-light">
 					<div class="row mx-0">
@@ -14,19 +14,28 @@
 						</div>
 						<div class="col">
 							<div class="row  align-items-center">
-								<div class="col h4 strong mb-0 py-2">Managers</div>
-								<div class="col-auto py-3"> <button class="btn btn-normal btn-outline-primary px-3">+ Add <span class="  d-none d-md-inline">Manager</span></button></div>
+								<div class="col h4 strong mb-0 py-2">Partner Users</div>
+								<div class="col-auto py-3"> <button class="btn btn-normal btn-outline-primary px-3">+ Add <span class="  d-none d-md-inline">User</span></button></div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="cabinet-block__body p-3">
-						<div class="search-block">
-							<form action="">
-								<button class="search-block__btn"><Search/></button>
-								<input type="text" class="form-control" placeholder="Search">
-							</form>
+						<div class="row g-3">
+							<div class="col">
+								<div class="search-block">
+									<form action="">
+										<button class="search-block__btn"><Search/></button>
+										<input type="text" class="form-control" placeholder="Search">
+									</form>
+								</div>
+
+							</div>
+							<div class="col-auto">
+								<button class="  btn btn-normal btn-outline-primary px-lg-5">Sort</button>
+							</div>
 						</div>
+
 						<table class="table table--managers smallest">
 							<thead>
 								<tr>
@@ -34,7 +43,8 @@
 									<th>{{th2}}</th>
 									<th>{{th3}}</th>
 									<th>{{th4}}</th>
-									<th colspan="3">{{th5}}</th> 
+									<th >{{th5}}</th> 
+									<th >{{th6}}</th> 
 								</tr>
 							</thead>
 							<tbody>
@@ -47,8 +57,7 @@
 									<td :data-title="th3">{{item.td3}}</td>
 									<td :data-title="th4">{{item.td4}}</td>
 									<td :data-title="th5">{{item.td5}}</td>
-									<td class="text-danger">{{item.td6}}</td>
-									<td class="text-end"><Lock/></td>
+									<td  >{{item.td6}}</td> 
 								</tr>
 							</tbody>
 						</table>
@@ -69,7 +78,7 @@
 import TopNav from '@/components/TopNav.vue' 
 import Footer from '@/components/Footer.vue'
 import ChevronLeft from '@/components/icons/ChevronLeft.vue'
-import Lock from '@/components/icons/Lock.vue'
+// import Lock from '@/components/icons/Lock.vue'
 import Search from '@/components/icons/Search.vue'
 
 export default {
@@ -77,7 +86,7 @@ export default {
 	components: { 
 		TopNav,
 		ChevronLeft,
-		Lock,
+		// Lock,
 		Search,
 		// SRegisterPage,
 		// HeaderBlock,
@@ -91,38 +100,41 @@ export default {
 	},
 	data() {
 		return{
-				th1:"ID",
-				th2:"Name",
-				th3:"E-mail",
-				th4:"Phone",
-				th5:"Reg. date", 
+				th1:"Name",
+				th2:"Reg. Date",
+				th3:"Where?",
+				th4:"Promocode",
+				th5:"You Earn", 
+				th6:"Time for end", 
 				items: [
 						{
-							td1:"458896",
-							td2:"Mary Anderson",
-							td3:"sample@sample.com",
-							td4:"(646) 592-9988",
-							td5:"10.12.2020", 
-							td6:"$120.00", 
+							td1:"John Smith",
+							td2:"15.10.16",
+							td3:"Unit 3",
+							td4:"CZ-BASE",
+							td5:"-", 
+							td6:"70 min.",
 						},
 						
 						{
-							td1:"458896",
-							td2:"Mary Anderson",
-							td3:"sample@sample.com",
-							td4:"(646) 592-9988",
-							td5:"10.12.2020", 
-							td6:"$120.00", 
+							td1:"John Smith",
+							td2:"15.10.16",
+							td3:"Unit 3",
+							td4:"CZ-BASE",
+							td5:"-", 
+							td6:"70 min.",
 						},
+						
 						{
-							td1:"458896",
-							td2:"Mary Anderson",
-							td3:"sample@sample.com",
-							td4:"(646) 592-9988",
-							td5:"10.12.2020", 
-							td6:"$120.00", 
+							td1:"John Smith",
+							td2:"15.10.16",
+							td3:"Unit 3",
+							td4:"CZ-BASE",
+							td5:"-", 
+							td6:"70 min.",
 						},
-
+						
+					
 				]
 		}
 	}

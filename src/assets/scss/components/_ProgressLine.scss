@@ -1,0 +1,68 @@
+
+	// start .ProgressLine
+	.ProgressLine {
+		max-width: rem(373);
+		height: rem(8);
+		background: #F2F2F2;
+		&__bar{
+			height: 100%;
+			height: rem(8);
+			position: relative;
+			svg{
+				// @include a-cent1(y);
+				position: absolute;
+				top: rem(-20);
+				right: rem(-12);
+			}
+		}
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.ProgressLine
+
+
+[fill="#FFD54F"] {
+	animation: blink-animation .6s steps(6, start) infinite ; 
+}
+
+@keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
+
+.cicle-progess{
+	// --w: #{rem(48)};
+	// --bw: #{rem(6)};
+	// width: var(--w);
+	// height: var(--w);
+	// border-radius: 50%;
+	// border: var(--bw) solid #C4C4C4;
+	// position: relative;
+	// &__inner{
+	// 	left: calc(-1 * var(--bw));
+	// 	top: calc(-1 * var(--bw));
+	// 	width: var(--w);
+	// 	height: var(--w);
+	// 	border-radius: 50%;
+	// 	border: var(--bw) solid $primary;
+	// 	position: absolute;
+	// }
+	.progress-ring__circle{
+		transition: 0.35s stroke-dashoffset;
+		// axis compensation
+		transform: rotate(-90deg);
+		transform-origin: 50% 50%;
+	}
+}

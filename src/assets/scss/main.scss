@@ -29,7 +29,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/images";
 @import "./node_modules/bootstrap/scss/containers";
 @import "./node_modules/bootstrap/scss/grid";
-// @import "./node_modules/bootstrap/scss/tables";
+@import "./node_modules/bootstrap/scss/tables";
 @import "./node_modules/bootstrap/scss/forms";
 @import "./node_modules/bootstrap/scss/buttons";
 // @import "./node_modules/bootstrap/scss/transitions";
@@ -79,7 +79,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/tooltip";
 @import "./node_modules/bootstrap/scss/popover";
 // @import "./node_modules/bootstrap/scss/carousel";
-// @import "./node_modules/bootstrap/scss/spinners";
+@import "./node_modules/bootstrap/scss/spinners";
 
 // Helpers
 @import "./node_modules/bootstrap/scss/helpers";
@@ -111,6 +111,8 @@ $output-bourbon-deprecation-warnings: false;
 @import 'components/SSponsorCabinet';
 @import 'components/SPersonalCabinet';
 @import 'components/cource-steps';
+@import 'components/AsideQ';
+@import 'components/ProgressLine';
 @import 'components/Footer';
 
 @import "media"; // Всегда в конце
