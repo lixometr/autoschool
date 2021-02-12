@@ -101,6 +101,34 @@ must be given to the Motor Vehicle License Examiner when you appear for the road
 									<button class="btn btn-white">YES</button>
 								</div>
 						</div>
+
+						<div class="py-5">
+							<div class="row row-lines">
+
+							<div class=" col-auto">
+								<div class="left-btn border-success" >The Pre-Licensing
+									<div class="left-btn-line" style="transform: rotate(28deg); width: 86px;"></div>
+								</div>
+								<div class="left-btn border-danger" >The Pre-Licensing</div>
+								<div class="left-btn border-success" >The Pre-Licensing</div>
+								<div class="left-btn">The Pre-Licensing</div>
+							</div>
+							<div class="col">
+								<div class="right-text-block  border-success"  >
+									The Pre-Licensing Course Completion Certificate (MV-278) is given to you at the completion of the course. This certificate is needed to schedule a road test. A valid  MV-278 and Learner’s Permit must be given to the Motor Vehicle License Examiner  when you appear for the road test
+								</div>
+								<div class="right-text-block  border-danger-success"  >
+									The Pre-Licensing Course Completion Certificate (MV-278) is given to you at the completion of the course. This certificate is needed to schedule a road test. A valid  MV-278 and Learner’s Permit must be given to the Motor Vehicle License Examiner  when you appear for the road test
+								</div>
+								<div class="right-text-block  border-danger"  >
+									The Pre-Licensing Course Completion Certificate (MV-278) is given to you at the completion of the course. This certificate is needed to schedule a road test. A valid  MV-278 and Learner’s Permit must be given to the Motor Vehicle License Examiner  when you appear for the road test
+								</div>
+								<div class="right-text-block" >
+									The Pre-Licensing Course Completion Certificate (MV-278) is given to you at the completion of the course. This certificate is needed to schedule a road test. A valid  MV-278 and Learner’s Permit must be given to the Motor Vehicle License Examiner  when you appear for the road test
+								</div>
+							</div>
+							</div>
+						</div>
 						
 
 						<div class="row pt-5 align-items-center">

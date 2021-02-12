@@ -804,7 +804,12 @@ iframe {
 
 .btn-outline-primary{
 	&.btn-bg{
-		background:rgba($color: $primary, $alpha: .1);
+		&:not(:hover){
+
+			border-color:rgba($color: $primary, $alpha: .1);
+			background:rgba($color: $primary, $alpha: .1);
+			color: $primary;
+		}
 	}
 }
 
@@ -952,4 +957,116 @@ iframe {
 				}
 			} 
 	}
+}
+
+
+
+.left-btn {
+	@include media-breakpoint-up(md){
+
+		width: rem(170);
+	}
+	width: rem(140);
+	padding: rem(10);
+	--color: #{$primary};
+	border: 2px solid var(--color);
+	position: relative;
+	margin-bottom: rem(20);
+	cursor: pointer;
+	background-color: #fff;
+
+	&::before {
+		content: '';
+		@include a-cent1(y);
+		width: 8px;
+		height: 8px;
+		right: -5px;
+		border-radius: 50%;
+		background-color: var(--color);
+	}
+
+}
+
+.right-text-block {
+	padding: rem(10);
+	--color: #{$primary};
+	border: 2px solid var(--color);
+	position: relative;
+	margin-bottom: rem(20);
+	cursor: pointer;
+	max-width: calc(100% - 13px);
+	background-color: #fff;
+
+	&::before {
+		content: '';
+		@include a-cent1(y);
+		width: 8px;
+		height: 8px;
+		left: -5px;
+		border-radius: 50%;
+		background-color: var(--color);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -2px;
+		left: 100%;
+		height: calc(100% + 4px);
+		width: 13px;
+
+	}
+
+	&.border-success {
+		--color: #{$success};
+
+		&::after {
+			background-color: var(--color);
+		}
+	}
+
+	&.border-danger {
+		--color: #{$danger};
+
+		&::after {
+			background-color: var(--color);
+		}
+	}
+
+	&.border-danger-success {
+		--color: #{$success};
+
+		&::after {
+			background: linear-gradient(to bottom, var(--color) 0%, var(--color) 50%, $danger 50%, $danger 100%);
+		}
+	}
+}
+
+.row-lines {
+	@include roww(20px);
+	@include media-breakpoint-up(md) {
+			--bs-gutter-x: 75px;
+
+		}
+
+}
+
+.border-success {
+	--color: #{$success};
+}
+
+.border-danger {
+	--color: #{$danger};
+}
+
+.left-btn-line {
+	background-color: var(--color);
+	width: 100px;
+	height: 2px;
+	left: 100%;
+	top: 50%;
+	margin-top: -1px;
+	transform-origin: left center;
+	position: absolute;
+
 }

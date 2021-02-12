@@ -17,28 +17,28 @@
 
 								<div class="row">
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Last Name</span>
 											<input type="text" class="form-control ">
 										</label>
 									</div>
 									
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">First Name</span>
 											<input type="text" class="form-control is-valid">
 										</label>
 										<div class="valid-feedback"> Looks good! </div>
 									</div>
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Middle Name</span>
 											<input type="text" class="form-control ">
 										</label>
 									</div>
 
 									<div class="col-xxl-2 col-xl-3 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Class of permit </span>
 											<select  class="form-select  ">
 												<option value="">United States</option>
@@ -50,7 +50,7 @@
 										</label> 
 									</div>
 									<div class="col-xxl-2 col-xl-3 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Expiration date</span>
 											<input type="date" class="form-control is-valid">
 										</label> 
@@ -60,7 +60,7 @@
 										<div class="row">
 
 											<div class="col-lg-6">
-												<label for="" class="input-wrap">
+												<label  class="input-wrap">
 													<span class="input-wrap__title">Expiration date</span>
 													<input type="date" class="form-control is-valid">
 												</label> 
@@ -72,13 +72,13 @@
 									<div class="col-12"></div>
 
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">ID Number</span>
 											<input type="text" class="form-control ">
 										</label> 
 									</div>
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Document Number</span>
 											<input type="text" class="form-control ">
 										</label> 

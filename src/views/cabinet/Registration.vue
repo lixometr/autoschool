@@ -17,14 +17,14 @@
 								<div class="row"> 
 									<div class="col-12 opacity-50 text-secondary h6 strong">Personal information</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Last name <span class="text-danger">*</span></span>
 											<input type="text" class="form-control is-valid">
 										</label>
 										<div class="valid-feedback"> Looks good! </div>
 									</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">First name  <span class="text-danger">*</span></span>
 											<input type="text" class="form-control is-invalid">
 										</label>
@@ -33,13 +33,13 @@
 								
 								
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Middle name </span>
 											<input type="text" class="form-control  ">
 										</label> 
 									</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Country <span class="text-danger">*</span></span>
 											<select  class="form-select is-invalid">
 												<option value="">United States</option>
@@ -53,13 +53,13 @@
 									</div>
 
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">E-mail Address <span class="text-danger">*</span></span>
 											<input type="email" class="form-control  ">
 										</label> 
 									</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Validate E-mail Address  <span class="text-danger">*</span></span>
 											<input type="email" class="form-control  ">
 										</label> 
@@ -68,13 +68,13 @@
 									<div class="col-12 opacity-50 text-secondary h6 strong pt-1">Data for logging in to a personal account</div>
 
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Username  <span class="text-danger">*</span></span>
 											<input type="text" class="form-control  ">
 										</label> 
 									</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Password <span class="text-danger">*</span></span>
 											<input v-bind:type="isPassword ? 'password' : 'text'" class="form-control form-control--sp-right">
 											<div class="btn-toggle-type" :class="{show: !isPassword}" @click="toggleType">

@@ -118,7 +118,7 @@ must be given to the Motor Vehicle License Examiner when you appear for the road
 									</div>
 								</div>
 							</div>
-							<label for="" class="input-wrap">
+							<label  class="input-wrap">
 								<span class="input-wrap__title">Your comments, requests or suggestions </span> 
 								<textarea name="" rows="10" class="form-control"></textarea>
 							</label>

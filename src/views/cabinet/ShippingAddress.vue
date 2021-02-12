@@ -18,7 +18,7 @@
 								<div class="row"> 
 									<div class="col-12 opacity-50 text-secondary h6 strong">Shipping Address</div>
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Country <span class="text-danger">*</span></span>
 											<select  class="form-select  ">
 												<option value="">United States</option>
@@ -30,14 +30,14 @@
 										</label> 
 									</div>
 									<div class="col-xl-4 col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Zip Code <span class="text-danger">*</span></span>
 											<input type="text" class="form-control is-valid">
 										</label>
 										<div class="valid-feedback"> Looks good! </div>
 									</div>
 									<div class="col-lg-12">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Address  <span class="text-danger">*</span></span>
 											<input type="text" class="form-control is-invalid">
 										</label>
@@ -45,7 +45,7 @@
 									</div>
 								
 									<div class="col-lg-12">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Address 2</span>
 											<input type="text" class="form-control is-invalid">
 										</label>
@@ -53,7 +53,7 @@
 									</div>
 
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">City <span class="text-danger">*</span></span>
 											<select  class="form-select  ">
 												<option value="">United States</option>
@@ -66,7 +66,7 @@
 									</div>
 
 									<div class="col-lg-6">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">State\Province  <span class="text-danger">*</span></span>
 											<select  class="form-select  ">
 												<option value="">United States</option>
@@ -79,7 +79,7 @@
 									</div>
 								
 									<div class="col-lg-12">
-										<label for="" class="input-wrap">
+										<label  class="input-wrap">
 											<span class="input-wrap__title">Full Name </span>
 											<input type="text" class="form-control  ">
 										</label> 

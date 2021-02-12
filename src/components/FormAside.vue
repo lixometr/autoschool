@@ -2,16 +2,16 @@
 	<div class="FormAside">
 		<div class="FormAside__title">If you have any  questions - <span>write to us!</span></div>
 		<form >
-			<label for="" class="input-wrap">
+			<label  class="input-wrap">
 				<span class="input-wrap__title">Name </span>
 				<input type="text" class="form-control">
 			</label>
 			
-			<label for="" class="input-wrap">
+			<label  class="input-wrap">
 				<span class="input-wrap__title">E-mail</span>
 				<input type="text" class="form-control">
 			</label>
-			<label for="" class="input-wrap">
+			<label  class="input-wrap">
 				<span class="input-wrap__title">Your question </span> 
 				<textarea name=""  class="form-control"></textarea>
 			</label>

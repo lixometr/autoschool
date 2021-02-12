@@ -5,5 +5,6 @@ import router from './router'
 import VueFinalModal from 'vue-final-modal'
 
 
-createApp(App).use(router, VueFinalModal()).mount('#app')
+
+createApp(App).use(router).use(VueFinalModal()).mount('#app')
 // Vue.use()

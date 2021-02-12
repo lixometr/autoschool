@@ -122,7 +122,7 @@
 														</label>
 													</div>
 													<div class="col-4">
-														<label for="" class="input-wrap">
+														<label  class="input-wrap">
 															<span class="input-wrap__title">Class of permit </span>
 															<select  class="form-select  ">
 																<option value="">United States</option>
