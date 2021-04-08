@@ -1,7 +1,6 @@
 <template>
 	<div class="main-wrapper main-wrapper--cabinet main-wrapper--footer-without-border">
-		<!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-		<TopNav :cabinet="true"/>
+		<TopNav :cabinet="false"/>
 		<div class="container section pt-0">
 			<div class="row">
 				<div class="cabinet-block bg-white col-12">

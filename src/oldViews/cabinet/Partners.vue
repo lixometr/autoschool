@@ -58,7 +58,7 @@
 								>
 									<td :data-title="th1">
 										{{item.td1}}
-										<div class="strong"><a href="{{item.td1Link}}" target="_blank">{{item.td1Link}}</a></div>
+										<div class="strong"><a :href="item.td1Link" target="_blank">{{item.td1Link}}</a></div>
 									</td>
 									<td :data-title="th2"  class="text-center">{{item.td2}}</td>
 									<td :data-title="th3" v-html="item.td3"></td>
