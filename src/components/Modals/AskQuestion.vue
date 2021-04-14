@@ -1,12 +1,12 @@
 <template>
   <div class="modal-content">
-    <button class="modal__close" @click="showModalQuestion = false">
+    <button class="modal__close" @click="$emit('close')">
       <Close />
     </button>
     <form action="#" @submit.prevent="onSubmit">
       <div class="h6 strong mb-2">{{ $t("askQuestion") }}</div>
 
-      <app-text-area v-model="values.text" :label="$t('question')" rows="3" />
+      <app-text-area v-model="values.text" :errors="errors.text" :label="$t('question')" rows="3" />
 
       <div class="row">
         <div class="col-6">
@@ -18,7 +18,9 @@
           </button>
         </div>
         <div class="col-6">
-          <button class="btn btn-md btn-primary w-100" type="submit">{{ $t("send") }}</button>
+          <button class="btn btn-md btn-primary w-100" type="submit">
+            {{ $t("send") }}
+          </button>
         </div>
       </div>
     </form>
@@ -33,6 +35,8 @@ import AppTextArea from "../common/AppTextArea.vue";
 import * as yup from "yup";
 import { useApiSendFeedback } from "@/api/feedback";
 import { errorHandler } from "@/helpers/error-handler";
+import useToast from "@/compositions/useToast";
+import useTranslate from "@/compositions/useTranslate";
 export default defineComponent({
   components: { Close, AppTextArea },
   setup(props, { emit }) {
@@ -46,6 +50,8 @@ export default defineComponent({
       });
       await exec(toSend);
       if (error.value) return;
+      const { success } = useToast();
+      success({ message: useTranslate().i18n.t("messageSent") as string });
       emit("close");
     });
     return { onSubmit, values, errors };
@@ -53,5 +59,5 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style >
 </style>

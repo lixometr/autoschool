@@ -1,104 +1,142 @@
 <template>
-	<div class="SPersonalCabinet section pt-0">
-		<div class="container">
-			<div class="row my-0">
-				<div class="cabinet-block col bg-white border-bottom border-light">
-					<div class="cabinet-block__head row ">
-						<h1 class="col-lg">Personal cabinet</h1>
-						<!-- <div class="col-auto small"><a href="#">Edit information</a></div>
-						<div class="col-auto small"><a href="#">Documents</a></div> -->
-					</div>
-					<div class="row">
-						<div class="col-sm-auto mb-2">
-							<div class="avatar-block avatar-block--lg">
-								<img src="../assets/img/avatar.png" alt="">
-							</div>
-						</div>
-						<div class="col">
-							<div class="h6 strong">
-								Alexander
-								<br>
-								Ilua
-							</div>
-							<div class="row pb-1">
-								<div class="col-auto mb-2"><a href="#">Edit profile</a></div>
-								<div class="col-auto mb-2"><a href="#">Download reciept</a></div>
-							</div>
-							<div class="small mb-3">Expiration Date: 1/19/2021 9:50:36 PM</div>
-						
-						</div>
-						<div class="col-lg-auto">
-							<button class="btn-alert btn-danger-light  ">
-								<Warning/>
-								<span>Shipping Address</span>
-							</button>
-							<br>
-							<button class="btn-alert btn-danger-light  ">
-								<Warning/>
-								<span>Setup Security Questions</span>
-							</button>
-							<br>
-							<button class="btn-alert btn-danger">
-								<Warning/>
-								<span>Your Personal Data</span>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="cabinet-block col-md-auto bg-primary text-white ">
-					<button class="btn btn-md btn-success w-100 mb-3">Ask a question</button>
-					<div class="small mb-1">Email: Thomas.F@opland.com</div>
-					<div class="small mb-3">Phone: <a href="tel:+13568896699" class="text-white strong">+1 356 889 66 99</a> </div>
-					<button class="btn btn-md btn-success w-100">Download notification</button>
-				</div>
-				<div class="cabinet-block col-12 bg-white">
-					<div class="alert alert-warning small" role="alert">
-						<Warning/> You have 27&nbsp;Day(s) to&nbsp;complete this course. If&nbsp;you do&nbsp;not complete the course by&nbsp;then you will not be&nbsp;able to&nbsp;graduate the course and will have to&nbsp;take the entire course again
-					</div>
-					<div class="cabinet-block__head ">
-						<div class="h6">Сurrent course: 
-							<strong class="text-primary">ONLINE PRE-LICENSING COURSE</strong>
-						</div>
-					</div>
-					<div class="cabinet-block__body">
-						<div class="cource-steps">
-							<div class="cource-steps__item active">Unit 1</div>
-							<div class="cource-steps__item current">Unit 2</div>
-							<div class="cource-steps__item">Unit 3</div>
-							<div class="cource-steps__item">Unit 4</div>
-							<div class="cource-steps__item">Unit 5</div>
-							<div class="cource-steps__item">Unit 6</div>
-						</div>
-						<p>Until the end of the course another - <strong>3 month</strong></p>
-					</div>
+  <div class="container section pt-0">
+    <div class="row">
+      <div class="cabinet-block bg-white col-12">
+        <div class="row">
+          <div class="col">
+            <div class="cabinet-block__head row">
+              <h1 class="col-lg">{{ $t("personalData.title") }}</h1>
+              <div class="col-lg-auto pt-1 h6 strong text-danger">
+                {{ $t("personalData.warning") }}
+              </div>
+              <!-- <div class="col-auto small"><a href="#">Edit information</a></div>
+									<div class="col-auto small"><a href="#">Documents</a></div> -->
+            </div>
+            <form action="#" @submit.prevent="onSubmit">
+              <div class="row">
+                <div class="col-xl-4 col-lg-6">
+                  <app-input
+                    v-model="values.lastName"
+                    :errors="errors.lastName"
+                    :label="$t('inputs.lastName')"
+                  />
+                </div>
 
-				</div>
-				<div class="cabinet-block  bg-white col-12">
-					<div class="cabinet-block cabinet-block--footer cabinet-block--light col-12">
-					<div class="h6 strong">Ready to go back to training</div>
-					<p class="mb-4 col-xxl-4 col-lg-6">Use the below PayPal to&nbsp;pre-pay class fee. Write the student&rsquo;s name in&nbsp;the &laquo;Ship&nbsp;To&raquo; part of&nbsp;PayPal</p>
-					<div class="row gx-4">
-						<div class="col-auto"><button class="btn btn-md btn-outline-primary">Continue implementation</button></div> 
-					</div>
-				</div>
-				</div>
+                <div class="col-xl-4 col-lg-6">
+                  <app-input
+                    v-model="values.firstName"
+                    :errors="errors.firstName"
+                    :label="$t('inputs.firstName')"
+                  />
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                  <app-input
+                    v-model="values.middleName"
+                    :errors="errors.middleName"
+                    :label="$t('inputs.middleName')"
+                  />
+                </div>
 
-			</div>
-		</div>
-	</div>
+                <div class="col-xxl-2 col-xl-3 col-lg-6">
+                  <app-select
+                    :label="$t('inputs.	permitClass')"
+                    :options="permitOptions"
+                    v-model="values.classOfPermit"
+                    :errors="errors.classOfPermit"
+                  />
+                </div>
+                <div class="col-xxl-2 col-xl-3 col-lg-6">
+                  <date-input
+                    :label="$t('inputs.expirationDate')"
+                    v-model="values.expDate"
+                    :errors="errors.expDate"
+                  />
+                </div>
+
+                <div class="col-xxl-4 col-lg-6">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <date-input
+                        :label="$t('inputs.expirationDate')"
+                        v-model="values.birthday"
+                        :errors="errors.birthday"
+                      />
+                    </div>
+                    <div
+                      class="col-lg-6 align-self-center pt-lg-2 pb-2 pb-lg-0 smallest"
+                      v-html="$t('personalData.birthdayText')"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-12"></div>
+
+                <div class="col-xl-4 col-lg-6">
+                  <app-input
+                    v-model="values.idNumber"
+                    :errors="errors.idNumber"
+                    :label="$t('inputs.idNumber')"
+                  />
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                  <app-input
+                    v-model="values.documentNumber"
+                    :errors="errors.documentNumber"
+                    :label="$t('inputs.documentNumber')"
+                  />
+                </div>
+              </div>
+
+              <button class="btn-reg btn-primary mt-4" type="submit">
+                {{ $t("submit") }}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import Warning from './icons/Warning.vue'
-
-export default {
-	name: 'SPersonalCabinet',
-	components:{
-		Warning
-	}
-}
+import AppSelect from "../../components/common/AppSelect.vue";
+import DateInput from "../../components/common/DateInput.vue";
+import AppInput from "@/components/common/AppInput.vue";
+import useForm from "@/compositions/validators/useForm";
+import { defineComponent } from "@vue/composition-api";
+import * as yup from "yup";
+import { useApiSendPersonalData } from "@/api/personal-data";
+import { errorHandler } from "@/helpers/error-handler";
+import useTranslate from "@/compositions/useTranslate";
+export default defineComponent({
+  components: { AppInput, DateInput, AppSelect },
+  setup() {
+    const { values, errors, handleSubmit, serialize } = useForm({
+      lastName: ["", yup.string().required()],
+      firstName: ["", yup.string().required()],
+      middleName: ["", yup.string().required()],
+      classOfPermit: ["", yup.string().required()],
+      expDate: ["", yup.string().required()],
+      birthday: ["", yup.string().required()],
+      idNumber: ["", yup.string().required()],
+      documentNumber: ["", yup.string().required()],
+    });
+    const onSubmit = handleSubmit(async () => {
+      const toSend = serialize();
+      console.log(toSend);
+      const { exec, error } = useApiSendPersonalData({
+        toast: {
+          error: errorHandler(),
+          success: () => useTranslate().i18n.t("personalData.sentSuccess"),
+        },
+      });
+      await exec(toSend);
+      if (error.value) return;
+    });
+    const permitOptions = ["A", "B", "C", "D"];
+    return { values, errors, onSubmit, permitOptions };
+  },
+});
 </script>
 
 <style lang="scss">
-  
 </style>

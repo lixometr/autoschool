@@ -16,4 +16,8 @@ export class UserEntity {
         questions_answered: false
         shipping_address_filled: false
     }
+
+    get role() {
+        return this.roles?.data[0]
+    }
 }

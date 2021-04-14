@@ -3,8 +3,8 @@
     <div class="h6 strong mb-3">{{ $t("login.title") }}</div>
     <app-input
       :label="$t('inputs.login')"
-      v-model="values.login"
-      :errors="errors.login"
+      v-model="values.email"
+      :errors="errors.email"
     />
     <app-input
       type="password"
@@ -39,7 +39,7 @@ export default defineComponent({
      */
     const { values, errors, serialize, handleSubmit } = useForm(
       {
-        login: ["", yup.string().required()],
+        email: ["", yup.string().email().required()],
         password: ["", yup.string().required()],
       },
       {}

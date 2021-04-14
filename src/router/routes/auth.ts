@@ -5,5 +5,8 @@ export const auth: Array<RouteConfig> = [
         name: "SignUp",
         path: '/signup',
         component: () => import("@/views/SignUp/SignUp.vue"),
+        meta: {
+            layout: 'landing'
+        }
     }
 ]

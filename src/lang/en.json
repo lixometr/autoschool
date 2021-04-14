@@ -33,7 +33,12 @@
         "emailRepeat": "Validate E-mail Address",
         "username": "Username",
         "password": "Password",
-        "login": "Login"
+        "login": "Login",
+        "idNumber": "ID Number",
+        "documentNumber": "Document Number",
+        "expirationDate": "Expiration date",
+        "birthday": "Birthday",
+        "permitClass": "Class of permit "
     },
     "personalCabinet": {
         "title": "Personal cabinet"
@@ -55,13 +60,21 @@
             "Point Reductions"
         ]
     },
+    "personalData": {
+        "title": "Personal data",
+        "warning": "PROVIDE ALL INFORMATION STRICTLY AS appear on the learners permit",
+        "sentSuccess": "Peresonal data was successfully sent",
+        "birthdayText": " Provide their date of&nbsp;birth as&nbsp;it&nbsp;appears on&nbsp;the individual&rsquo;s permit"
+    },
     "next": "Next",
+    "submit": "Submit",
     "email": "Email",
     "phone": "Phone",
     "send": "Send",
     "cancel": "Cancel",
     "askQuestion": "Ask a question",
     "question": "Question",
+    "messageSent": "Your message was sent",
     "dashboard": {
         "downloadNotification": "Download notification"
     }

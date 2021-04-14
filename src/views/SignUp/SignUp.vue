@@ -1,8 +1,7 @@
 <template>
   <div
-    class="main-wrapper main-wrapper--cabinet main-wrapper--footer-without-border"
+   
   >
-    <TopNav :cabinet="false" />
     <div class="container section pt-0">
       <div class="row">
         <div class="cabinet-block bg-white col-12">
@@ -27,8 +26,6 @@
         </div>
       </div>
     </div>
-
-    <Footer />
   </div>
 </template>
 
@@ -37,30 +34,12 @@
 <script>
 import SignUpForm from "../../components/SignUp/SignUpForm.vue";
 
-import TopNav from "@/components/TopNav.vue";
-// import SRegisterPage from '@/components/SRegisterPage.vue'
-// import HeaderBlock from '@/components/HeaderBlock.vue'
-// import SRegister from '@/components/SRegister.vue'
-// import SAbout from '@/components/SAbout.vue'
-// import SWhatWillLearn from '@/components/SWhatWillLearn.vue'
-// import SPromocode from '@/components/SPromocode.vue'
-// import SPersonalCabinet from '@/components/SPersonalCabinet.vue'
-// import FormAside from '@/components/FormAside.vue'
-import Footer from "@/components/Footer.vue";
+
 
 export default {
   name: "Faq",
   components: {
-    TopNav,
-    // SRegisterPage,
-    // HeaderBlock,
-    // SRegister,
-    // SAbout,
-    // SWhatWillLearn,
-    // SPromocode,
-    // SPersonalCabinet,
-    // FormAside,
-    Footer,
+  
     SignUpForm,
   },
   data() {

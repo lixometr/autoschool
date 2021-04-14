@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import DashboardCourseProgress from "../../components/Dashboard/DashboardCourseProgress.vue";
+import DashboardCourseProgress from "@/components/DashboardUser/DashboardCourseProgress.vue";
 import { defineComponent } from "@vue/composition-api";
 import Warning from "@/components/icons/Warning.vue";
-import DashboardAlerts from "@/components/Dashboard/DashboardAlerts.vue";
-import DashboardInfoCard from "@/components/Dashboard/DashboardInfoCard.vue";
-import DashboardCta from "@/components/Dashboard/DashboardCta.vue";
-import DashboardUserInfo from "@/components/Dashboard/DashboardUserInfo.vue";
+import DashboardAlerts from "@/components/DashboardUser/DashboardAlerts.vue";
+import DashboardInfoCard from "@/components/DashboardUser/DashboardInfoCard.vue";
+import DashboardCta from "@/components/DashboardUser/DashboardCta.vue";
+import DashboardUserInfo from "@/components/DashboardUser/DashboardUserInfo.vue";
 
 export default defineComponent({
   components: {

@@ -63,7 +63,7 @@ class User extends VuexModule {
     return getUser.result.value
   }
   @Action
-  async login({ login, password }) {
+  async login({ email, password }) {
     const doLogin = useApiLogin({
       toast: {
         error: err => {
@@ -77,7 +77,7 @@ class User extends VuexModule {
         }
       },
     })
-    await doLogin.exec({ login, password })
+    await doLogin.exec({ email, password })
     if (doLogin.result.value && !doLogin.error.value) {
       this.setTokenWithCookie({ token: doLogin.result.value.access_token });
       this.fetchUser()

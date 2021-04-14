@@ -2,8 +2,22 @@ import { RouteConfig } from "vue-router";
 
 export const dashboard: RouteConfig[] = [
     {
-        name: "Dashboard",
         path: "/dashboard",
-        component: () => import("@/views/Dashboard/Dashboard.vue")
-    }
+        component: {
+            render: c => c('router-view')
+        },
+        children: [
+            {
+                name: "Dashboard",
+                path: "",
+                component: () => import("@/views/Dashboard/Dashboard.vue")
+            },
+            {
+                name: "PersonalData",
+                path: "personal-data",
+                component: () => import("@/views/Dashboard/PersonalData.vue")
+            }
+        ]
+    },
+
 ]

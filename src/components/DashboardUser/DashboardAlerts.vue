@@ -1,16 +1,16 @@
 <template>
   <div class="col-lg-auto">
-    <button class="btn-alert btn-danger-light" v-if="shipping">
+    <button class="btn-alert btn-danger-light" v-if="shipping" @click="goTo('ShippingAddress')">
       <Warning />
       <span>Shipping Address</span>
     </button>
     <br />
-    <button class="btn-alert btn-danger-light" v-if="sequrityQuestions">
+    <button class="btn-alert btn-danger-light" v-if="sequrityQuestions" @click="goTo('SecurityQuestions')">
       <Warning />
       <span>Setup Security Questions</span>
     </button>
     <br />
-    <button class="btn-alert btn-danger" v-if="personalData">
+    <button class="btn-alert btn-danger" v-if="personalData" @click="goTo('PersonalData')">
       <Warning />
       <span>Your Personal Data</span>
     </button>
@@ -21,6 +21,7 @@
 import { computed, defineComponent } from "@vue/composition-api";
 import Warning from "@/components/icons/Warning.vue";
 import { UserModule } from "@/store/modules/user";
+import useRouter from "@/compositions/useRouter";
 
 export default defineComponent({
   components: { Warning },
@@ -34,7 +35,11 @@ export default defineComponent({
     const personalData = computed(
       () => !UserModule.user.verification_status.personal_data_filled
     );
-    return { shipping, sequrityQuestions, personalData };
+    const goTo = (name: string) => {
+      const router = useRouter()
+      router.push({name})
+    }
+    return { shipping, sequrityQuestions, personalData, goTo };
   },
 });
 </script>
