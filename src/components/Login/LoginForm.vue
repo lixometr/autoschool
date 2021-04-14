@@ -1,10 +1,14 @@
 <template>
   <form action="#" @submit.prevent="onSubmit">
-    <div class="h6 strong mb-3">Login</div>
-    <app-input label="E-mail" v-model="values.login" :errors="errors.login" />
+    <div class="h6 strong mb-3">{{ $t("login.title") }}</div>
     <app-input
-    type="password"
-      label="Password"
+      :label="$t('inputs.login')"
+      v-model="values.login"
+      :errors="errors.login"
+    />
+    <app-input
+      type="password"
+      :label="$t('inputs.password')"
       v-model="values.password"
       :errors="errors.password"
     />
@@ -12,7 +16,7 @@
     <div class="row justify-content-center pt-2">
       <div class="col-12">
         <button class="btn btn-md btn-primary w-100" type="submit">
-          Login
+          {{ $t("login.btn") }}
         </button>
       </div>
     </div>
@@ -30,12 +34,11 @@ export default defineComponent({
   setup(props, { emit }) {
     /**
      *
-     * Login: admin
+     * Login: admin@mailforspam.com
      * Pass: 12345678
      */
     const { values, errors, serialize, handleSubmit } = useForm(
       {
-        // не email, т.к. в бд бекендщик только такого юзера занес
         login: ["", yup.string().required()],
         password: ["", yup.string().required()],
       },
@@ -56,5 +59,5 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style >
 </style>

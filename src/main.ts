@@ -8,6 +8,8 @@ import "@/libs/toast"
 import "@/libs/vue-cookie"
 
 import "@/libs/vue-final-modal"
+import "@/libs/vue-select"
+
 import i18n from "@/libs/vue-i18n"
 
 

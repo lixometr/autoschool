@@ -19,32 +19,8 @@
               >Sign up</router-link
             >
           </div>
-          <div class="col-auto cabinet-btn" v-if="cabinet">
-            <div class="cabinet-btn__avatar">AI</div>
-            <div class="cabinet-btn__name d-none d-sm-block">Alexander I.</div>
-          </div>
-          <div class="col-auto">
-            <div class="lang-block">
-              <div class="lang-block__toggle">
-                <div class="lang-block__img-wrap">
-                  <img src="../assets/img/eng.png" alt="" />
-                </div>
-              </div>
-              <div class="lang-block__dropdown">
-                <div class="lang-block__dropdown-item">
-                  <div class="lang-block__img-wrap">
-                    <img src="../assets/img/eng.png" alt="" />
-                  </div>
-                </div>
-
-                <div class="lang-block__dropdown-item">
-                  <div class="lang-block__img-wrap">
-                    <img src="../assets/img/eng.png" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <top-nav-account v-if="cabinet"/>
+          <lang-switcher />
           <div class="col-auto d-xl-none">
             <div
               class="toggle-menu-mobile toggle-menu-mobile--js"
@@ -90,6 +66,8 @@
 </template>
 
 <script>
+import TopNavAccount from './TopNav/TopNavAccount.vue'
+import LangSwitcher from './common/LangSwitcher.vue'
 // import { SvgSprite } from 'vue-svg-sprite'
 import Logo from "@/components/icons/Logo.vue";
 import Nav from "@/components/common/Nav.vue";
@@ -110,7 +88,7 @@ export default defineComponent({
   components: {
     // SvgSprite,
     Logo,
-    Nav,
+    Nav, LangSwitcher, TopNavAccount
   },
   data() {
     return {

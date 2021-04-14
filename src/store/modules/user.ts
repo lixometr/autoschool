@@ -1,14 +1,12 @@
 import { Action, getModule, Module, Mutation, VuexModule } from "vuex-module-decorators";
 import store from "@/store";
-import { useApiGetUser, useApiLogin } from "@/api/login";
+import { useApiGetUser, useApiLogin } from "@/api/auth";
 import useCookie from "@/compositions/useCookie";
 import { UserEntity } from "@/models/user.entity";
 import { UserToken } from "@/types/constants";
-import { errorHandler } from "@/helpers/error-handler";
 import useRouter from "@/compositions/useRouter";
 import useToast from "@/compositions/useToast";
-import { plainToClass } from "class-transformer";
-import { LoginDto } from "@/dto/login.dto";
+import useTranslate from "@/compositions/useTranslate";
 @Module({ dynamic: true, store, name: 'user' })
 class User extends VuexModule {
   user: UserEntity | null = null
@@ -26,7 +24,7 @@ class User extends VuexModule {
   }
 
   @Action
-  setTokenWithCookie({ token, expiresIn }: { token: string, expiresIn: number }) {
+  setTokenWithCookie({ token, expiresIn = 1 * 60 * 60 * 24 * 30 }: { token: string, expiresIn?: number }) {
     this.setToken(token)
     const cookie = useCookie()
     cookie.set(UserToken, token, expiresIn)
@@ -54,10 +52,10 @@ class User extends VuexModule {
 
   @Action
   async fetchUser() {
-    const getUser = useApiGetUser({ toast: { error: errorHandler() } })
+    const getUser = useApiGetUser({})
     await getUser.exec()
     if (!getUser.error.value) {
-      this.setUser(getUser.result.value.data)
+      this.setUser(getUser.result.value)
     } else {
       this.setUser(null)
       this.removeToken()
@@ -69,19 +67,19 @@ class User extends VuexModule {
     const doLogin = useApiLogin({
       toast: {
         error: err => {
-          if(err.response?.status === 401) {
-            return 'Пользователь не найден'
+          if (err.response?.status === 401) {
+            return useTranslate().i18n.t('validations.userNotFound') as string
           }
-          return 'Произошла ошибка'
+          return useTranslate().i18n.t('validations.errorHappened') as string
         },
         success(data) {
-          return 'Успешный вход'
+          return useTranslate().i18n.t('validations.successLogin') as string
         }
       },
     })
-    await doLogin.exec(plainToClass(LoginDto, { login, password }))
+    await doLogin.exec({ login, password })
     if (doLogin.result.value && !doLogin.error.value) {
-      this.setTokenWithCookie({ token: doLogin.result.value.access_token, expiresIn: 1 * 60 * 60 * 24 * 30});
+      this.setTokenWithCookie({ token: doLogin.result.value.access_token });
       this.fetchUser()
       return true
     }

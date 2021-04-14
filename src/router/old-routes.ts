@@ -1,35 +1,34 @@
 import { RouteConfig } from 'vue-router';
-import Home from '../oldViews/Home.vue'
 export const oldRoutes: Array<RouteConfig> = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
-      },
-      {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../oldViews/About.vue')
-      },
+    // {
+    //     path: '/',
+    //     name: 'Home',
+    //     component: Home
+    //   },
+    //   {
+    //     path: '/about',
+    //     name: 'About',
+    //     // route level code-splitting
+    //     // this generates a separate chunk (about.[hash].js) for this route
+    //     // which is lazy-loaded when the route is visited.
+    //     component: () => import(/* webpackChunkName: "about" */ '../views/InfoPages/About.vue')
+    //   },
     
-      {
-        path: '/partnership',
-        name: 'Partnership',
-        component: () => import(/* webpackChunkName: "Partnership" */ '../oldViews/Partnership.vue')
-      },
-      {
-        path: '/FAQ',
-        name: 'FAQ',
-        component: () => import(/* webpackChunkName: "FAQ" */ '../oldViews/FAQ.vue')
-      },
-      {
-        path: '/contacts',
-        name: 'Contacts',
-        component: () => import(/* webpackChunkName: "Contacts" */ '../oldViews/Contacts.vue')
-      },
+    //   {
+    //     path: '/partnership',
+    //     name: 'Partnership',
+    //     component: () => import(/* webpackChunkName: "Partnership" */ '../views/InfoPages/Partnership.vue')
+    //   },
+    //   {
+    //     path: '/FAQ',
+    //     name: 'FAQ',
+    //     component: () => import(/* webpackChunkName: "FAQ" */ '../views/InfoPages/FAQ.vue')
+    //   },
+    //   {
+    //     path: '/contacts',
+    //     name: 'Contacts',
+    //     component: () => import(/* webpackChunkName: "Contacts" */ '../views/InfoPages/Contacts.vue')
+    //   },
       {
         path: '/cabinet/PartnerCabinet',
         name: '/cabinet/PartnerCabinet',
@@ -48,7 +47,8 @@ export const oldRoutes: Array<RouteConfig> = [
       {
         path: '/cabinet/PersonalCabinet',
         name: '/cabinet/PersonalCabinet',
-        component: () => import(/* webpackChunkName: "Contacts" */ '../oldViews/cabinet/PersonalCabinet.vue')
+        component: () => import(/* webpackChunkName: "Contacts" */ '../oldViews/cabinet/PersonalCabinet.vue'),
+        
       },
       {
         path: '/Registration',

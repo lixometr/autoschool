@@ -2,13 +2,13 @@
   <form action="#" @submit.prevent="onSubmit">
     <div class="row">
       <div class="col-12 opacity-50 text-secondary h6 strong">
-        Personal information
+        {{ $t("signup.personalInformation") }}
       </div>
       <div class="col-lg-6">
         <app-input
           v-model="values.lastName"
           :required="true"
-          label="Last name"
+          :label="$t('inputs.lastName')"
           :errors="errors.lastName"
         />
       </div>
@@ -16,7 +16,7 @@
         <app-input
           v-model="values.firstName"
           :required="true"
-          label="First name"
+          :label="$t('inputs.firstName')"
           :errors="errors.firstName"
         />
       </div>
@@ -25,24 +25,23 @@
         <app-input
           v-model="values.middleName"
           :required="true"
-          label="Middle name"
+          :label="$t('inputs.middleName')"
           :errors="errors.middleName"
         />
       </div>
       <div class="col-lg-6">
-        <app-select
-          v-model="values.country"
+        <country-select
+          v-model="values.countryId"
           :required="true"
-          label="Country"
-          :options="[{name: 'test', value: 'test'}]"
-          :errors="errors.country"
+          :label="$t('inputs.country')"
+          :errors="errors.countryId"
         />
       </div>
 
       <div class="col-lg-6">
         <app-input
           v-model="values.email"
-          label="E-mail Address1"
+          :label="$t('inputs.email')"
           :errors="errors.email"
           :required="true"
         />
@@ -50,20 +49,20 @@
       <div class="col-lg-6">
         <app-input
           v-model="values.validateEmail"
-          label="Validate E-mail Address1"
+          :label="$t('inputs.emailRepeat')"
           :errors="errors.validateEmail"
           :required="true"
         />
       </div>
 
       <div class="col-12 opacity-50 text-secondary h6 strong pt-1">
-        Data for logging in to a personal account
+        {{ $t("signup.dataPersonalAccaount") }}
       </div>
 
       <div class="col-lg-6">
         <app-input
           v-model="values.username"
-          label="Username"
+          :label="$t('inputs.username')"
           :errors="errors.username"
           :required="true"
         />
@@ -71,7 +70,7 @@
       <div class="col-lg-6">
         <app-input
           v-model="values.password"
-          label="Password"
+          :label="$t('inputs.password')"
           :errors="errors.password"
           :required="true"
           :type="isPassword ? 'password' : 'text'"
@@ -87,21 +86,31 @@
         ></app-input>
       </div>
     </div>
-    <button class="btn-reg btn-primary mt-4" type="submit">Next</button>
+    <button class="btn-reg btn-primary mt-4" type="submit">
+      {{ $t("signup.submit") }}
+    </button>
   </form>
 </template>
 
 <script lang="ts">
+import CountrySelect from "../common/CountrySelect.vue";
 import AppInput from "../common/AppInput.vue";
 import { defineComponent, ref } from "@vue/composition-api";
 import Eye from "@/components/icons/Eye.vue";
 import useForm from "@/compositions/validators/useForm";
 import * as yup from "yup";
-import AppSelect from "../common/AppSelect.vue";
+// import AppSelect from "../common/AppSelect.vue";
+import { useApiSignup } from "@/api/auth";
+import { errorHandler } from "@/helpers/error-handler";
+import useTranslate from "@/compositions/useTranslate";
+import { SignUpDto } from "@/dto/signup.dto";
+import { UserModule } from "@/store/modules/user";
+import useRouter from "@/compositions/useRouter";
 export default defineComponent({
-  components: { Eye, AppInput, AppSelect },
+  components: { Eye, AppInput, CountrySelect },
   setup() {
-    const isPassword = ref(false);
+    const isPassword = ref(true);
+    const router = useRouter();
     const toggleType = () => {
       isPassword.value = !isPassword.value;
       // some code to filter users
@@ -110,19 +119,40 @@ export default defineComponent({
       lastName: ["", yup.string().required()],
       firstName: ["", yup.string().required()],
       middleName: ["", yup.string().required()],
-      country: ["", yup.string().required()],
+      countryId: ["", yup.number().required()],
       email: ["", yup.string().email().required()],
-      validateEmail: ["", yup.string().email().required()],
+      validateEmail: [
+        "",
+        yup
+          .string()
+          .email()
+          .required()
+          .test(
+            "",
+            useTranslate().i18n.t("validations.sameEmail"),
+            (value, context) => {
+              return context.parent.email === value;
+            }
+          ),
+      ],
       username: ["", yup.string().required()],
       password: ["", yup.string().required()],
     });
     const onSubmit = handleSubmit(async () => {
-      console.log(serialize());
+      const toSend: SignUpDto = serialize();
+      const { exec, error, result } = useApiSignup({
+        toast: { error: errorHandler() },
+      });
+      await exec(toSend);
+      if (error.value) return;
+      UserModule.setTokenWithCookie({ token: result.value.access_token });
+      await UserModule.fetchUser();
+      router.push({ name: "Dashboard" });
     });
     return { toggleType, isPassword, values, errors, onSubmit, isSubmit };
   },
 });
 </script>
 
-<style scoped>
+<style >
 </style>

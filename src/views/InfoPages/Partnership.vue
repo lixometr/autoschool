@@ -1,7 +1,6 @@
 <template>
-  <div class="main-wrapper main-wrapper--landing">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <TopNav/>
+  <div>
+
     <div class="container landing-body">
       <div class="row">
         <div class="col-xl-8"> 
@@ -46,7 +45,7 @@
           <p>How it&nbsp;Works: The New York Department of&nbsp;Motor Vehicles allows you to&nbsp;complete a&nbsp;defensive driving course to&nbsp;reduce up&nbsp;to&nbsp;four points on&nbsp;your driving record and provide you with a&nbsp;mandatory&nbsp;10% insurance reduction for 3&nbsp;years. Whether you are required by&nbsp;the NYS DMV, looking to&nbsp;reduce ticket points and/or just want your&nbsp;10% car insurance reduction, this state-approved course will help you meet your goal.</p>
         </div>
         <div class="sContent__img-block">
-          <img src="../assets/img/sContent-img.jpg" loading="lazy" alt="" class="res-i">
+          <img src="@/assets/img/sContent-img.jpg" loading="lazy" alt="" class="res-i">
         </div>
         <div class="h6 strong">Pre-Licensing Course Completion Certificate (MV-278)</div>
         <p>The Pre-Licensing Course Completion Certificate (MV-278) is&nbsp;given to&nbsp;you at&nbsp;the completion of&nbsp;the course. This certificate is&nbsp;needed to&nbsp;schedule a&nbsp;road test. A&nbsp;valid MV-278 and Learner&rsquo;s Permit must be&nbsp;given to&nbsp;the Motor Vehicle License Examiner when you appear for the road test. The MV-278 certificate is&nbsp;valid for one year from the date of&nbsp;issuance. The certificate is&nbsp;not renewable. If&nbsp;lost, a
@@ -63,7 +62,6 @@ duplicate MV-278&nbsp;is obtained from the school you attended.</p>
     <SModules/>-->
     <SReadyPartnership/> 
 
-    <Footer/>
 
   </div>
 </template>
@@ -72,7 +70,6 @@ duplicate MV-278&nbsp;is obtained from the school you attended.</p>
 
 <script>
  
-import TopNav from '@/components/TopNav.vue'
 import SRegisterPage from '@/components/SRegisterPage.vue'
 // import HeaderBlock from '@/components/HeaderBlock.vue'
 // import SRegister from '@/components/SRegister.vue'
@@ -81,12 +78,10 @@ import SRegisterPage from '@/components/SRegisterPage.vue'
 // import SPromocode from '@/components/SPromocode.vue'
 // import SModules from '@/components/SModules.vue'
 import SReadyPartnership from '@/components/SReadyPartnership.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Partnership',
   components: { 
-    TopNav,
     SRegisterPage,
     // HeaderBlock,
     // SRegister,
@@ -95,7 +90,6 @@ export default {
     // SPromocode,
     // SModules,
     SReadyPartnership,
-    Footer,
   }
 }
 </script>

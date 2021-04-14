@@ -3,14 +3,14 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import { oldRoutes } from './old-routes'
 import { auth } from './routes/auth'
+import { dashboard } from './routes/dashboard'
+import { info } from './routes/info'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
-  // {
-  //   name: "Home",
-  //   path: '/',
-  // },
+  ...info,
+  ...dashboard,
   ...oldRoutes,
   ...auth,
   // {
@@ -29,10 +29,21 @@ const router = new VueRouter({
   routes
 })
 const noAuthList = [
+  'Home',
+  'About',
+  'FAQ',
+  'SignUp',
+  'Contacts',
+  'Partnership'
 ]
 router.beforeEach((to, from, next) => {
-  return next()
-  if (!noAuthList.includes(to.name) && !UserModule.isAuth) next({ name: 'Login' })
+  if (!noAuthList.includes(to.name) && to.meta?.noAuth !== true) {
+    if (!UserModule.isAuth) {
+      return next({ name: 'Home' })
+    } else {
+      next()
+    }
+  }
   else next()
 })
 

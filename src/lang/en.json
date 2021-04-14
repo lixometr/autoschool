@@ -1,3 +1,68 @@
 {
-    "hello": "Привет"
+    "validations": {
+        "sameEmail": "Email should be equal",
+        "required": "This field is required",
+        "correct": "Put correct value",
+        "minString": "Enter ${min} or more symbols",
+        "lengthString": "Enter exactly ${length} symbols",
+        "minNumber": "Number should be greater than ${min}",
+        "maxNumber": "Number should be less than ${max}",
+        "validEmail": "Enter valid email address",
+        "userNotFound": "User not found",
+        "errorHappened": "Error",
+        "successLogin": "Successfuly loged in"
+    },
+    "signup": {
+        "title": "Registration",
+        "personalInformation": "Personal information",
+        "dataPersonalAccaount": "Data for logging in to a personal account",
+        "submit": "Next",
+        "requirements": "<p>Sponsors must have a minimum of seven points, using two or more of these techniques, provided, however, that one point must be for content questions. The content questions may be asked at random points throughout the course or at the end of each chapter or unit. </p><p>Student private information, as defined in the personal identification section shall be encrypted. All authentication information shall be protected; for example, it should not be stored or transmitted in clear text.</p>",
+        "requirementsBtn": "Read Requirements"
+    },
+    "login": {
+        "title": "Login",
+        "btn": "Login"
+    },
+    "inputs": {
+        "lastName": "Last name",
+        "firstName": "First name",
+        "middleName": "Middle name",
+        "country": "Country",
+        "email": "E-mail Address",
+        "emailRepeat": "Validate E-mail Address",
+        "username": "Username",
+        "password": "Password",
+        "login": "Login"
+    },
+    "personalCabinet": {
+        "title": "Personal cabinet"
+    },
+    "footer": {
+        "copyright": "Copyright © 2021",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "privacyText": "*Successful completion of 320-minute Internet course by principal operator of insured vehicle provides 3-year, 10% reduction in base rate of motorist's current car liability, no-fault & collision premiums.**Point reduction benefits can be applied once within 18 months and reduce as many as 4 points from record. Reduced points remain on the driving record but are not counted by NYS DMV against the license. Point reduction does not remove, delete, subtract or erase violations, convictions or points, or prevent or cancel a mandatory revocation or suspension for violations such as DWI, DWAI or three speeding violations within 18 months.",
+        "phone": "+1 (212) 752-0100",
+        "email": "Sample@sample.com",
+        "menu": [
+            "Home",
+            "Course Details",
+            "New York Defensive Driving",
+            "5-Hour Pre-Licensing",
+            "New York Traffic Tickets",
+            "Insurance Discount",
+            "Point Reductions"
+        ]
+    },
+    "next": "Next",
+    "email": "Email",
+    "phone": "Phone",
+    "send": "Send",
+    "cancel": "Cancel",
+    "askQuestion": "Ask a question",
+    "question": "Question",
+    "dashboard": {
+        "downloadNotification": "Download notification"
+    }
 }

@@ -1,109 +1,20 @@
+import useTranslate from '@/compositions/useTranslate';
 import * as yup from 'yup';
-// yup.addMethod(yup.string, 'cyrilic', (value) => {
-//     const cyrillicPattern = /^\p{Script=Cyrillic}+$/u;
-//     return value.test(cyrillicPattern)
-// })
+
 
 yup.setLocale({
     mixed: {
-        default: 'Неправильное поле',
-        required: "Заполните это поле",
-        notType: "Введите корректное значение"
+        default: useTranslate().i18n.t('validations.correct'),
+        required: useTranslate().i18n.t('validations.required'),
+        notType:  useTranslate().i18n.t('validations.correct'),
     },
     string: {
-        min: 'Введите ${min} и более символа',
-        length: 'Введите ровно ${length} символов'
+        min: useTranslate().i18n.t('validations.minString'),
+        length: useTranslate().i18n.t('validations.lengthString'),
+        email: useTranslate().i18n.t('validations.validEmail'),
     },
     number: {
-        min: 'Число должно быть больше чем ${min}',
-        max: 'Число должно быть не больше чем ${max}',
+        min: useTranslate().i18n.t('validations.minNumber'),
+        max: useTranslate().i18n.t('validations.maxNumber'),
     },
 })
-
-/**
- * 
- * export interface MixedLocale {
-    default?: Message;
-    required?: Message;
-    oneOf?: Message<{
-        values: any;
-    }>;
-    notOneOf?: Message<{
-        values: any;
-    }>;
-    notType?: Message;
-    defined?: Message;
-}
-export interface StringLocale {
-    length?: Message<{
-        length: number;
-    }>;
-    min?: Message<{
-        min: number;
-    }>;
-    max?: Message<{
-        max: number;
-    }>;
-    matches?: Message<{
-        regex: RegExp;
-    }>;
-    email?: Message<{
-        regex: RegExp;
-    }>;
-    url?: Message<{
-        regex: RegExp;
-    }>;
-    uuid?: Message<{
-        regex: RegExp;
-    }>;
-    trim?: Message;
-    lowercase?: Message;
-    uppercase?: Message;
-}
-export interface NumberLocale {
-    min?: Message<{
-        min: number;
-    }>;
-    max?: Message<{
-        max: number;
-    }>;
-    lessThan?: Message<{
-        less: number;
-    }>;
-    moreThan?: Message<{
-        more: number;
-    }>;
-    positive?: Message<{
-        more: number;
-    }>;
-    negative?: Message<{
-        less: number;
-    }>;
-    integer?: Message;
-}
-export interface DateLocale {
-    min?: Message<{
-        min: Date | string;
-    }>;
-    max?: Message<{
-        max: Date | string;
-    }>;
-}
-export interface ObjectLocale {
-    noUnknown?: Message;
-}
-export interface ArrayLocale {
-    length?: Message<{
-        length: number;
-    }>;
-    min?: Message<{
-        min: number;
-    }>;
-    max?: Message<{
-        max: number;
-    }>;
-}
-export interface BooleanLocale {
-    isValue?: Message;
-}
- */

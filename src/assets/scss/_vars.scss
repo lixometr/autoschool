@@ -178,7 +178,7 @@ $body-text-align: null !default;
 $link-color: $primary !default;
 $link-decoration: none !default;
 $link-shade-percentage: 20% !default;
-$link-hover-color: scale-color($link-color, $link-shade-percentage) !default;
+$link-hover-color: scale-color($link-color, $alpha: $link-shade-percentage) !default;
 $link-hover-decoration: null !default;
 
 $stretched-link-pseudo-element: after !default;
@@ -288,8 +288,7 @@ $aspect-ratios: ("1x1": 100%,
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: 
-$default-font,
+$font-family-sans-serif: $default-font,
 system-ui,
 -apple-system,
 "Segoe UI",
@@ -446,12 +445,12 @@ $table-caption-color: $text-muted !default;
 
 $table-bg-scale: -80% !default;
 
-$table-variants: ("primary": scale-color($primary, $table-bg-scale),
-  "secondary": scale-color($secondary, $table-bg-scale),
-  "success": scale-color($success, $table-bg-scale),
-  "info": scale-color($info, $table-bg-scale),
-  "warning": scale-color($warning, $table-bg-scale),
-  "danger": scale-color($danger, $table-bg-scale),
+$table-variants: ("primary": scale-color($primary, $alpha: $table-bg-scale),
+  "secondary": scale-color($secondary, $alpha: $table-bg-scale),
+  "success": scale-color($success, $alpha: $table-bg-scale),
+  "info": scale-color($info, $alpha: $table-bg-scale),
+  "warning": scale-color($warning, $alpha: $table-bg-scale),
+  "danger": scale-color($danger, $alpha: $table-bg-scale),
   "light": $light,
   "dark": $dark,
 ) !default;

@@ -1,6 +1,6 @@
 import { Ref, ref, watch } from "@vue/composition-api";
 import useAxios from '@/compositions/useAxios'
-import { AxiosError, AxiosRequestConfig } from "axios";
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import useGlobalLoading from "./useGlobalLoading";
 import useToast from "./useToast";
 import { errorHandler } from "@/helpers/error-handler";
@@ -10,13 +10,14 @@ export interface ToastMessages {
 }
 export interface UseApiOptions {
     toast?: boolean | ToastMessages
-    loading?: boolean
+    loading?: boolean,
+
 }
 const axios = useAxios()
 export default function useApi<T, R extends any>(
     factory: (opts: T) => AxiosRequestConfig,
     options: UseApiOptions = { toast: false, loading: false },
-    handleResponse = async (data: any): Promise<R> => data.data,
+    handleResponse = (data: AxiosResponse<any>): any => data.data,
 ) {
     const isLoading = ref(false);
     const result: Ref<R> = ref(null);
@@ -27,7 +28,7 @@ export default function useApi<T, R extends any>(
         error.value = null;
         try {
             const response = await axios(request);
-            const valueResponse: R = await handleResponse(response)
+            const valueResponse = await handleResponse(response)
             result.value = valueResponse;
             return valueResponse;
         } catch (e) {

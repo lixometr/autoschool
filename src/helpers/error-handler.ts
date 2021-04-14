@@ -10,8 +10,8 @@ const errHandler = (err: AxiosError) => {
         if(response.status === 413) {
             return 'Вы пытаетесь загрузить слишком большой файл, попробуйте загрузить поменьше'
         }
-        if (response.data && response.data.message) {
-            return response.data.message
+        if (response.data && response.data.error) {
+            return response.data.error?.message
         }
     }
 }
