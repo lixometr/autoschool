@@ -11,11 +11,13 @@
 import LoginForm from "../Login/LoginForm.vue";
 import Close from "@/components/icons/Close.vue";
 import { defineComponent } from "@vue/composition-api";
+import useRouter from "@/compositions/useRouter";
 
 export default defineComponent({
   components: { Close, LoginForm },
   setup(props, { emit }) {
     const onSend = () => {
+      useRouter().push({ name: "Dashboard" });
       emit("close");
     };
     return { onSend };

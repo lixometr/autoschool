@@ -16,7 +16,22 @@ export const dashboard: RouteConfig[] = [
                 name: "PersonalData",
                 path: "personal-data",
                 component: () => import("@/views/Dashboard/PersonalData.vue")
-            }
+            },
+            {
+                name: "ShippingAddress",
+                path: "shipping-address",
+                component: () => import("@/views/Dashboard/ShippingAddress.vue")
+            },
+            {
+                name: "PartnerUsers",
+                path: "users",
+                component: () => import("@/views/Dashboard/PartnerUsers.vue")
+            },
+            {
+                name: "Documents",
+                path: "documents",
+                component: () => import("@/views/Dashboard/Documents.vue")
+            },
         ]
     },
 

@@ -80,7 +80,7 @@ class User extends VuexModule {
     await doLogin.exec({ email, password })
     if (doLogin.result.value && !doLogin.error.value) {
       this.setTokenWithCookie({ token: doLogin.result.value.access_token });
-      this.fetchUser()
+      await this.fetchUser()
       return true
     }
     return false

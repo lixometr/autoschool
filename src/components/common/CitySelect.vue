@@ -12,14 +12,14 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { useApiGetCountries } from "@/api/geo";
+import { useApiGetCities, useApiGetCountries } from "@/api/geo";
 import { errorHandler } from "@/helpers/error-handler";
 import AutoCompleteSelect from "./AutoCompleteSelect.vue";
 export default defineComponent({
   components: { AutoCompleteSelect },
   setup() {
     const searchFunc = () => {
-      return useApiGetCountries({
+      return useApiGetCities({
         toast: { error: errorHandler() },
       });
     };

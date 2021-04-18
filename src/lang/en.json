@@ -29,6 +29,7 @@
         "firstName": "First name",
         "middleName": "Middle name",
         "country": "Country",
+        "city": "City",
         "email": "E-mail Address",
         "emailRepeat": "Validate E-mail Address",
         "username": "Username",
@@ -38,10 +39,35 @@
         "documentNumber": "Document Number",
         "expirationDate": "Expiration date",
         "birthday": "Birthday",
-        "permitClass": "Class of permit "
+        "permitClass": "Class of permit ",
+        "zipCode": "Zip Code",
+        "address": "Address",
+        "fullName": "Full Name",
+        "state": "State\\Province"
     },
     "personalCabinet": {
         "title": "Personal cabinet"
+    },
+    "shippingAddress": {
+        "title": "Fill out personal information",
+        "subTitle": "PROVIDE ALL INFORMATION STRICTLY AS appear on the learners permit",
+        "formTitle": "Shipping Address",
+        "info": "<p> Sponsors must have a minimum of seven points, using two or more of these techniques, provided, however, that one point must be for content questions. The content questions may be asked at random points throughout the course or at the end of each chapter or unit. </p> <p> Student private information, as defined in the personal identification section shall be encrypted. All authentication information shall be protected; for example, it should not be stored or transmitted in clear text. </p>",
+        "requirements": "Read Requirements",
+        "requirementsLink": "#",
+        "sentSuccess": "Shipping Address was successfully sent"
+    },
+    "partnerCabinet": {
+        "title": "Partner cabinet",
+        "editInfo": "Edit information",
+        "documents": "Documents",
+        "dashboard": "Dashboard",
+        "infoText": "Use the below PayPal to&nbsp;pre-pay class fee. Write the student&rsquo;s name in&nbsp;the &laquo;Ship&nbsp;To&raquo; part of&nbsp;PayPal",
+        "promocode": "Promocode",
+        "students": "Your Students",
+        "tickets": "Tickets",
+        "earn": "you earn",
+        "period": "period"
     },
     "footer": {
         "copyright": "Copyright © 2021",
@@ -66,6 +92,12 @@
         "sentSuccess": "Peresonal data was successfully sent",
         "birthdayText": " Provide their date of&nbsp;birth as&nbsp;it&nbsp;appears on&nbsp;the individual&rsquo;s permit"
     },
+    "addUser": {
+        "title": "Add new user"
+    },
+    "addPromocode": {
+        "title": "Add promocode"
+    },
     "next": "Next",
     "submit": "Submit",
     "email": "Email",
@@ -75,6 +107,8 @@
     "askQuestion": "Ask a question",
     "question": "Question",
     "messageSent": "Your message was sent",
+    "search": "Search",
+    "add": "Add",
     "dashboard": {
         "downloadNotification": "Download notification"
     }

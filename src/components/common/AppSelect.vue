@@ -4,7 +4,7 @@
       >{{ label }} <span class="text-danger" v-if="required">*</span></span
     >
     <v-select
-      class="form-select"
+      class="form-select form-control"
       v-on="_listeners"
       v-bind="_attrs"
       :class="{
@@ -31,7 +31,7 @@ export default defineComponent({
   props: {
     clearable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     options: {
       type: Array,
@@ -46,7 +46,7 @@ export default defineComponent({
       return Object.assign({}, this.$attrs, {
         value: this.value,
         label: this.selectLabel,
-        clearable: this.clearable
+        clearable: this.clearable,
       });
     },
   },
@@ -64,7 +64,13 @@ export default defineComponent({
     border: none;
   }
   .form-select {
-    background: none;
+    padding-right: 10px;
+    background-size: 0 0;
+    &.is-invalid {
+      background-position: right 0.75rem center, center right 1rem;
+      background-size: 0 0, calc(0.75em + 0.938rem) calc(0.75em + 0.938rem);
+      padding-right: calc(0.75em + 2rem);
+    }
   }
 }
 </style>
