@@ -11,23 +11,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, toRef, toRefs } from "@vue/composition-api";
 import { useApiGetCities, useApiGetCountries } from "@/api/geo";
 import { errorHandler } from "@/helpers/error-handler";
 import AutoCompleteSelect from "./AutoCompleteSelect.vue";
 export default defineComponent({
   components: { AutoCompleteSelect },
-  setup() {
+  props: {
+    stateId: Number,
+  },
+  setup(props) {
+    const { stateId } = toRefs(props);
     const searchFunc = () => {
       return useApiGetCities({
         toast: { error: errorHandler() },
       });
     };
     const makeOptions = (result: any[]) => {
-      return result && result.map((item) => ({ name: item.name, value: item.id }));
+      return (
+        result && result.map((item) => ({ name: item.name, value: item.id }))
+      );
     };
     const makeRequest = ({ search }: { search: string }) => {
       return {
+        stateId: stateId.value,
         search,
       };
     };

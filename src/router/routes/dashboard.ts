@@ -32,6 +32,11 @@ export const dashboard: RouteConfig[] = [
                 path: "documents",
                 component: () => import("@/views/Dashboard/Documents.vue")
             },
+            {
+                name: "SecurityQuestions",
+                path: "security-questions",
+                component: () => import("@/views/Dashboard/SecurityQuestions.vue")
+            },
         ]
     },
 

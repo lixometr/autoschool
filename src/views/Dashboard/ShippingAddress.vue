@@ -52,6 +52,7 @@
 
                 <div class="col-lg-6">
                   <city-select
+                    :stateId="values.state"
                     :errors="errors.city"
                     v-model="values.city"
                     :label="$t('inputs.city')"
@@ -60,6 +61,7 @@
 
                 <div class="col-lg-6">
                   <state-select
+                    :countryId="values.country"
                     v-model="values.state"
                     :errors="errors.state"
                     :label="$t('inputs.state')"
@@ -146,7 +148,6 @@ export default defineComponent({
       });
       delete toSend.address1;
       delete toSend.address2;
-      console.log(toSend);
 
       await exec(toSend);
       if (error.value) return;

@@ -98,6 +98,10 @@
     "addPromocode": {
         "title": "Add promocode"
     },
+    "securityQuestions": {
+        "requirements": "<p> Sponsors must have a minimum of seven points, using two or more of these techniques, provided, however, that one point must be for content questions. The content questions may be asked at random points throughout the course or at the end of each chapter or unit. </p> <p> Student private information, as defined in the personal identification section shall be encrypted. All authentication information shall be protected; for example, it should not be stored or transmitted in clear text. </p>",
+        "requirementsBtn": "Read Requirements"
+    },  
     "next": "Next",
     "submit": "Submit",
     "email": "Email",
