@@ -28,6 +28,11 @@ export const dashboard: RouteConfig[] = [
                 component: () => import("@/views/Dashboard/PartnerUsers.vue")
             },
             {
+                name: "PartnerPromocodes",
+                path: "promocodes",
+                component: () => import("@/views/Dashboard/PartnerPromocodes.vue")
+            },
+            {
                 name: "Documents",
                 path: "documents",
                 component: () => import("@/views/Dashboard/Documents.vue")

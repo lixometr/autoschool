@@ -5,11 +5,12 @@
 </template>
 
 <script lang="ts">
+import ModalContent from './ModalContent.vue'
 import { defineComponent } from "@vue/composition-api";
 import AddUserForm from "../AddUser/AddUserForm.vue";
 
 export default defineComponent({
-  components: { AddUserForm },
+  components: { AddUserForm, ModalContent },
   setup(props, { emit }) {
     const onSend = () => {
       emit("close");

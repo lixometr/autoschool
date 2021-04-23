@@ -16,7 +16,7 @@
               }}</router-link>
             </div>
           </div>
-         <dashboard-partner-user-card />
+          <dashboard-partner-user-card />
         </div>
         <!-- / cabinet-block -->
         <dashboard-partner-info-card />
@@ -25,14 +25,20 @@
           <p class="mb-4" v-html="$t('partnerCabinet.infoText')"></p>
           <div class="row">
             <div class="col-auto">
-              <button class="btn btn-md btn-outline-primary">
+              <router-link
+                :to="{ name: 'PartnerPromocodes' }"
+                class="btn btn-md btn-outline-primary"
+              >
                 {{ $t("partnerCabinet.promocode") }}
-              </button>
+              </router-link>
             </div>
             <div class="col-auto">
-              <button class="btn btn-md btn-outline-primary">
+              <router-link
+                :to="{ name: 'PartnerUsers' }"
+                class="btn btn-md btn-outline-primary"
+              >
                 {{ $t("partnerCabinet.students") }}
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -42,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import DashboardPartnerUserCard from '../../components/DashboardPartner/DashboardPartnerUserCard.vue'
+import DashboardPartnerUserCard from "../../components/DashboardPartner/DashboardPartnerUserCard.vue";
 import DashboardPartnerInfoCard from "@/components/DashboardPartner/DashboardPartnerInfoCard.vue";
 import { defineComponent } from "@vue/composition-api";
 

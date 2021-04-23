@@ -5,20 +5,23 @@
       :key="idx"
       :label="item.name"
       :value="value === item.value"
+      :name="'radio' + _uid"
       @input="onItemChange(item.value)"
     />
   </div>
 </template>
 
 <script lang="ts">
+import AppRadioButton from "./AppRadioButton.vue";
 import { defineComponent } from "@vue/composition-api";
 interface IItem {
   name: string;
   value: string | number;
 }
 export default defineComponent({
+  components: { AppRadioButton },
   props: {
-    value: String,
+    value: [String, Number],
     items: {
       type: Array,
       default: () => [] as IItem[],

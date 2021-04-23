@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col">
             <div class="cabinet-block__head row">
-              <h1 class="col-lg">Setup Security Questions</h1>
+              <h1 class="col-lg">{{$t('securityQuestions.title')}}</h1>
               <!-- <div class="col-auto small"><a href="#">Edit information</a></div>
 									<div class="col-auto small"><a href="#">Documents</a></div> -->
             </div>

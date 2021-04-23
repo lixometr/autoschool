@@ -51,10 +51,12 @@
 </template>
 
 <script lang="ts">
+import AppInput from '../common/AppInput.vue'
 import useForm from "@/compositions/validators/useForm";
 import { defineComponent } from "@vue/composition-api";
 import * as yup from "yup";
 export default defineComponent({
+  components: { AppInput },
   setup() {
     const { handleSubmit, values, errors, serialize } = useForm({
       firstName: ["", yup.string().required()],

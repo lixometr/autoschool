@@ -1,6 +1,6 @@
 <template>
   <label class="form-check">
-    <input class="form-check-input" type="radio" v-model="inputModel" />
+    <input class="form-check-input" type="radio" v-model="inputModel" v-bind="$attrs"/>
     <span class="form-check-label">{{ label }}</span>
   </label>
 </template>
@@ -9,6 +9,7 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
+  inheritAttrs: false,
   props: {
     label: String,
     value: Boolean,
@@ -19,7 +20,6 @@ export default defineComponent({
         return this.value;
       },
       set(val) {
-        console.log(val);
         this.$emit("input", val);
       },
     },

@@ -43,7 +43,7 @@
 
                 <div class="col-lg-12">
                   <app-input
-                    :required="true"
+                    :required="false"
                     v-model="values.address2"
                     :errors="errors.address2"
                     :label="$t('inputs.address') + ' 2'"
@@ -126,12 +126,12 @@ export default defineComponent({
   components: { CountrySelect, AppInput, StateSelect, CitySelect },
   setup() {
     const { values, errors, handleSubmit, serialize } = useForm({
-      country: ["", yup.string().required()],
+      country: [null, yup.string().required()],
       zipCode: ["", yup.string().required()],
       address1: ["", yup.string().required()],
       address2: ["", yup.string()],
-      city: ["", yup.string().required()],
-      state: ["", yup.string().required()],
+      city: [null, yup.string().required()],
+      state: [null, yup.string().required()],
       fullName: ["", yup.string()],
     });
     const onSubmit = handleSubmit(async () => {

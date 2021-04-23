@@ -1,4 +1,7 @@
 {
+    "errors": {
+        "requestError": "Request error"
+    },
     "validations": {
         "sameEmail": "Email should be equal",
         "required": "This field is required",
@@ -99,9 +102,18 @@
         "title": "Add promocode"
     },
     "securityQuestions": {
+        "title": "Setup Security Questions",
         "requirements": "<p> Sponsors must have a minimum of seven points, using two or more of these techniques, provided, however, that one point must be for content questions. The content questions may be asked at random points throughout the course or at the end of each chapter or unit. </p> <p> Student private information, as defined in the personal identification section shall be encrypted. All authentication information shall be protected; for example, it should not be stored or transmitted in clear text. </p>",
-        "requirementsBtn": "Read Requirements"
+        "requirementsBtn": "Read Requirements",
+        "sentSuccess": "Your data have been successfully sent",
+        "error": "Please, answer all questions"
     },  
+    "partnerUsers": {
+        "title": "Partner Users"
+    },
+    "partnerPromocodes": {
+        "title": "Promocodes"  
+    },
     "next": "Next",
     "submit": "Submit",
     "email": "Email",
@@ -113,6 +125,8 @@
     "messageSent": "Your message was sent",
     "search": "Search",
     "add": "Add",
+    "save": "Save",
+    "backToDashboard": "Back to dashboard",
     "dashboard": {
         "downloadNotification": "Download notification"
     }
