@@ -1,4 +1,5 @@
 import { RouteConfig } from "vue-router";
+import { courseEditor } from "./course-editor";
 
 export const dashboard: RouteConfig[] = [
     {
@@ -42,6 +43,7 @@ export const dashboard: RouteConfig[] = [
                 path: "security-questions",
                 component: () => import("@/views/Dashboard/SecurityQuestions.vue")
             },
+            courseEditor
         ]
     },
 

@@ -107,13 +107,22 @@
         "requirementsBtn": "Read Requirements",
         "sentSuccess": "Your data have been successfully sent",
         "error": "Please, answer all questions"
-    },  
+    },
     "partnerUsers": {
         "title": "Partner Users"
     },
     "partnerPromocodes": {
-        "title": "Promocodes"  
+        "title": "Promocodes"
     },
+    "editor": {
+        "addLanguage": "Add language",
+        "deletePartOfUnit": "Delete part of unit",
+        "savePartOfUnit": " Save part of unit",
+        "addUnit": "Add unit"
+    },
+    "up": "Up",
+    "down": "Down",
+    "delete": "Delete",
     "next": "Next",
     "submit": "Submit",
     "email": "Email",

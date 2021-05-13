@@ -7,11 +7,16 @@ import { UserModule } from "@/store/modules/user";
 import { computed, defineComponent } from "@vue/composition-api";
 import DashboardUser from "./DashboardUser.vue";
 import DashboardPartner from "./DashboardPartner.vue";
+import { UserRoles } from "@/types/constants";
+import DashboardAdmin from "./DashboardAdmin.vue";
 export default defineComponent({
   setup() {
-    //   UserModule.user.roles
     const dashboardComponent = computed(() => {
-      return DashboardPartner;
+      if (UserModule.user.role.name === UserRoles.superAdmin) {
+        return DashboardAdmin;
+      } else {
+        return DashboardPartner;
+      }
     });
     return { dashboardComponent };
   },

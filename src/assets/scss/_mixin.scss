@@ -77,15 +77,23 @@
 }
 
 
-@mixin roww($a) {
+@mixin roww($a, $m:p) {
   --bs-gutter-x: #{$a};
 
   margin-left: calc(-1 * var(--bs-gutter-x)/ 2);
   margin-right: calc(-1 * var(--bs-gutter-x)/ 2);
 
   >* {
-    padding-left: calc(var(--bs-gutter-x)/2);
-    padding-right: calc(var(--bs-gutter-x)/2);
+    @if $m==m {
+      margin-left: calc(var(--bs-gutter-x)/2);
+      margin-right: calc(var(--bs-gutter-x)/2);
+    }
+
+    @else {
+
+      padding-left: calc(var(--bs-gutter-x)/2);
+      padding-right: calc(var(--bs-gutter-x)/2);
+    }
   }
 }
 

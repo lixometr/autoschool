@@ -64,6 +64,7 @@ $colors: ("blue": $blue,
   "gray-dark": $gray-800) !default;
 // scss-docs-end colors-map
 
+$light-bl: rgba(95, 151, 202, 0.2) !default;
 $primary: $blue !default;
 $secondary: #3A3A39 !default;
 $success: $green !default;
@@ -76,6 +77,7 @@ $dark: #828282 !default;
 // scss-docs-start theme-colors-map
 $theme-colors: ("primary": $primary,
   "secondary": $secondary,
+  "light-bl": $light-bl,
   "success": $success,
   "info": $info,
   "warning": $warning,
@@ -288,7 +290,8 @@ $aspect-ratios: ("1x1": 100%,
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: $default-font,
+$font-family-sans-serif: 
+$default-font,
 system-ui,
 -apple-system,
 "Segoe UI",

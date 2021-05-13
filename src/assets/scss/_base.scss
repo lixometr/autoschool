@@ -773,6 +773,12 @@ iframe {
 	padding-left: rem(20);
 	padding-right: rem(20);
 	font-weight: bold;
+	&:not(.add-lang--link) {
+		color: $body-color;
+		&:hover{
+			border-color: $primary;
+		}
+	}
 	&.active{
 		color: $body-color;
 		border-color: $primary;
@@ -1070,8 +1076,110 @@ iframe {
 	position: absolute;
 
 }
-.vld-icon {
-    svg {
-        stroke: $blue;
-    }
+
+.add-var{
+	display: flex;
+	align-items: center;
+	@include roww(30px, m);
+	padding-top: rem(10);
+	padding-bottom: rem(10);
+	&__btn{
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		font-weight: bold;
+		padding-left: rem(22);
+		padding-top: rem(5);
+		padding-bottom: rem(5);
+		&:hover{
+			color: $primary;
+		}
+		&::after,
+		&::before{
+			content: '';
+			position: absolute;
+			top: rem(14);
+			left: 0;
+			width: rem(12);
+			height: rem(3);
+			background-color: $primary;
+		}
+		&::after{
+			transform: rotate(90deg);
+		}
+	}
+}
+.control-line{
+	background-color: rgba($color: $primary, $alpha: .2);
+	padding-top: rem(10);
+	padding-bottom: rem(10);
+	.row{
+		align-items: center;
+	}
+	&__btn{
+		cursor: pointer;
+		display: inline-flex;
+		font-weight: bold;
+		align-items: center;
+		svg{
+			margin-right: rem(10);
+		}
+	}
+}
+
+.row--btns{
+	align-items: center;
+	.row{
+		align-items: center;
+	}
+	.btn{
+		margin-bottom: rem(10);
+		width: rem(114);
+		font-size: 14px;
+		padding: rem(8);
+	}
+}
+
+.bg-light-bl{
+
+}
+.form-check--success{
+	.form-check-input{
+		border-color: $success !important;
+	}
+	.form-check-input:checked[type="radio"]{
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%233D8060'/%3e%3c/svg%3e");
+	}
+}
+.form-check--danger{
+	.form-check-input{
+		border-color: $danger !important;
+	}
+	.form-check-input:checked[type="radio"]{
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FF4D4D'/%3e%3c/svg%3e");
+	}
+}
+
+.bg-light-bll{
+	background-color: rgba($color: $primary, $alpha: .1);
+}
+
+.btn-move{
+	border: none;
+	height: rem(35);
+	padding: 0;
+	width: rem(35);
+	margin-left: 2px;
+	margin-bottom: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-white{
+	color: $primary !important;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }

@@ -15,11 +15,11 @@
             <a href="#" class="menu__link" @click.prevent="login">Log in</a>
           </div>
           <div class="col-auto d-none d-xl-block" v-if="!cabinet">
-            <router-link :to="{name: 'SignUp'}" class="TopNav__btn"
+            <router-link :to="{ name: 'SignUp' }" class="TopNav__btn"
               >Sign up</router-link
             >
           </div>
-          <top-nav-account v-if="cabinet"/>
+          <top-nav-account v-if="cabinet" />
           <lang-switcher />
           <div class="col-auto d-xl-none">
             <div
@@ -66,14 +66,16 @@
 </template>
 
 <script>
-import TopNavAccount from './TopNav/TopNavAccount.vue'
-import LangSwitcher from './common/LangSwitcher.vue'
+import TopNavAccount from "./TopNav/TopNavAccount.vue";
+import LangSwitcher from "./common/LangSwitcher.vue";
 // import { SvgSprite } from 'vue-svg-sprite'
 import Logo from "@/components/icons/Logo.vue";
 import Nav from "@/components/common/Nav.vue";
 import { defineComponent } from "@vue/composition-api";
 import useModal from "@/compositions/useModal";
 import { ModalName } from "@/types/modal.enum";
+import { UserModule } from "@/store/modules/user";
+import useRouter from "@/compositions/useRouter";
 
 export default defineComponent({
   name: "TopNav",
@@ -81,14 +83,20 @@ export default defineComponent({
   setup() {
     const { showByName } = useModal();
     const login = () => {
-      showByName(ModalName.login);
+      // if (UserModule.isAuth) {
+      //   useRouter().push({ name: "Dashboard" });
+      // } else {
+        showByName(ModalName.login);
+      // }
     };
     return { login };
   },
   components: {
     // SvgSprite,
     Logo,
-    Nav, LangSwitcher, TopNavAccount
+    Nav,
+    LangSwitcher,
+    TopNavAccount,
   },
   data() {
     return {
