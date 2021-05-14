@@ -86,9 +86,21 @@
                 </div>
               </div>
 
-              <button class="btn-reg btn-primary mt-4" type="submit">
-                {{ $t("submit") }}
-              </button>
+              <div class="row">
+                <div class="col-auto">
+                  <button
+                    class="btn-reg btn-outline-primary mt-4"
+                    @click="cancel"
+                  >
+                    {{ $t("cancel") }}
+                  </button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn-reg btn-primary mt-4" type="submit">
+                    {{ $t("submit") }}
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -97,7 +109,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import AppSelect from "../../components/common/AppSelect.vue";
 import DateInput from "../../components/common/DateInput.vue";
 import AppInput from "@/components/common/AppInput.vue";
@@ -107,6 +119,8 @@ import * as yup from "yup";
 import { useApiSendPersonalData } from "@/api/personal-data";
 import { errorHandler } from "@/helpers/error-handler";
 import useTranslate from "@/compositions/useTranslate";
+import { UserModule } from "@/store/modules/user";
+import useRouter from "@/compositions/useRouter";
 export default defineComponent({
   components: { AppInput, DateInput, AppSelect },
   setup() {
@@ -126,14 +140,20 @@ export default defineComponent({
       const { exec, error } = useApiSendPersonalData({
         toast: {
           error: errorHandler(),
-          success: () => useTranslate().i18n.t("personalData.sentSuccess"),
+          success: () =>
+            useTranslate().i18n.t("personalData.sentSuccess") as string,
         },
       });
       await exec(toSend);
       if (error.value) return;
+      await UserModule.fetchUser();
+      useRouter().push({ name: "Dashboard" });
     });
     const permitOptions = ["A", "B", "C", "D"];
-    return { values, errors, onSubmit, permitOptions };
+    const cancel = () => {
+      useRouter().push({ name: "Dashboard" });
+    };
+    return { values, errors, cancel, onSubmit, permitOptions };
   },
 });
 </script>

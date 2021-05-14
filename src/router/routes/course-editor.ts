@@ -12,7 +12,11 @@ export const courseEditor: RouteConfig = {
   children: [
     {
       path: '',
-      redirect: { name: 'Dashboard' },
+      name: "CourseEditorDisabled",
+      component: () => import('@/views/Dashboard/CourseEditor.vue'),
+      meta: {
+        role: UserRoles.superAdmin,
+      },
     },
 
     {

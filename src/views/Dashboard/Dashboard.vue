@@ -14,6 +14,8 @@ export default defineComponent({
     const dashboardComponent = computed(() => {
       if (UserModule.user.role.name === UserRoles.superAdmin) {
         return DashboardAdmin;
+      } else if (UserModule.user.role.name === UserRoles.listener) {
+        return DashboardUser;
       } else {
         return DashboardPartner;
       }

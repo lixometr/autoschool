@@ -10,7 +10,7 @@
       <span>Setup Security Questions</span>
     </button>
     <br />
-    <button class="btn-alert btn-danger" v-if="personalData" @click="goTo('PersonalData')">
+    <button class="btn-alert btn-danger-light" v-if="personalData" @click="goTo('PersonalData')">
       <Warning />
       <span>Your Personal Data</span>
     </button>

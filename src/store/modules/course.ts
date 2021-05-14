@@ -6,7 +6,6 @@ class Course extends VuexModule {
   languages = []
   activeLanguage = 'English'
   get allLanguages() {
-    console.log('10')
     return [this.defaultLanguage, ...this.languages]
   }
   get defaultLanguage() {

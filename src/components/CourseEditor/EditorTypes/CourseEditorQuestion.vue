@@ -21,7 +21,6 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="flexRadioDefault2"
                 @change="onChangeValue('is_correct', true)"
                 :checked="value.is_correct"
               />
@@ -41,7 +40,6 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="flexRadioDefault2"
                 @change="onChangeValue('is_correct', false)"
                 :checked="!value.is_correct"
               />
@@ -55,7 +53,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs } from "@vue/composition-api";
+import { defineComponent, onMounted, toRefs } from "@vue/composition-api";
 import CourseEditorItem from "../CourseEditorItem.vue";
 import EditorTypesMixin from "./EditorTypesMixin";
 export default defineComponent({
@@ -68,6 +66,12 @@ export default defineComponent({
   components: { CourseEditorItem },
   mixins: [EditorTypesMixin],
   setup(props, { emit }) {
+    const { value } = toRefs(props);
+    onMounted(() => {
+      if (value.value.is_correct === undefined) {
+        emit("input", { ...value.value, is_correct: true });
+      }
+    });
     return {};
   },
 });

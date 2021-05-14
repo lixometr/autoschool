@@ -29,6 +29,7 @@ import { SecurityQuestionsDto } from "@/dto/security-questions.dto";
 import useTranslate from "@/compositions/useTranslate";
 import useToast from "@/compositions/useToast";
 import useRouter from "@/compositions/useRouter";
+import { UserModule } from "@/store/modules/user";
 
 export default defineComponent({
   components: { AppRadioGroup },
@@ -92,6 +93,7 @@ export default defineComponent({
       });
       await exec(toSend);
       if (error.value) return;
+      await UserModule.fetchUser()
       useRouter().push({ name: "Dashboard" });
       return;
     };

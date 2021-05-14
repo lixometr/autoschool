@@ -63,10 +63,12 @@ export default {
       toast: { error: errorHandler() },
     });
     fetchUnits();
-    const onPartDelete = () => {
-      // const newId = 0;
-      // router.push({name: "CourseEditor", params: {id: newId}})
-      fetchUnits();
+    const onPartDelete = async () => {
+      await fetchUnits();
+      const unit = units.value.find((unit) => unit.pages.length > 0);
+      const newId = unit.pages[0].id;
+      router.push({ name: "CourseEditor", params: { id: String(newId) } });
+
       return;
     };
 

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
+    "@ckeditor/ckeditor5-upload": "^27.1.0",
     "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "@vue/composition-api": "^1.0.0-rc.1",
     "axios": "^0.21.1",

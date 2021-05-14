@@ -29,9 +29,12 @@
         :key="index"
         @click="goToPart(part.id)"
       >
-        <span :class="{ 'text-primary': part.id !== $route.params.id }">{{
-          part.langName.value
-        }}</span>
+        <span
+          :class="{
+            'text-primary': parseInt(part.id) !== parseInt($route.params.id),
+          }"
+          >{{ part.langName.value }}</span
+        >
       </li>
       <!-- <li class="drag">Rules for Persons with a Learner Permit</li> -->
     </draggable>
@@ -152,6 +155,7 @@ export default defineComponent({
       });
       await exec({ id });
       if (error.value) return;
+      router.push({ name: "CourseEditorDisabled" });
       fetchUnits();
     };
     return {

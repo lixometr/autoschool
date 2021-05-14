@@ -2,17 +2,20 @@
   <div>
     <div class="row">
       <div class="col">
-        <span class="input-wrap__title strong">Question #1 </span>
+        <span class="input-wrap__title strong">{{ $t("question") }} #{{idx}} </span>
       </div>
       <div class="col-auto">
         <div class="input-group btn-group">
           <button class="btn btn-light-bl btn-move">
-            <ArrowUp />
+            <ArrowUp @click.native="$emit('up')" />
           </button>
           <button class="btn btn-light-bl btn-move">
-            <ArrowDown />
+            <ArrowDown @click.native="$emit('down')" />
           </button>
-          <button class="btn btn-light-bl btn-move">
+          <button
+            class="btn btn-light-bl btn-move cursor-pointer"
+            @click="$emit('remove')"
+          >
             <Close />
           </button>
         </div>
@@ -76,6 +79,7 @@ import { CourseEditorTestAnswerEntity } from "@/models/course-editor/course-edit
 export default defineComponent({
   components: { Close, ArrowUp, ArrowDown },
   props: {
+    idx: Number,
     value: {
       type: Object,
       default: () => ({}),
@@ -96,7 +100,7 @@ export default defineComponent({
     };
     const removeAnswer = (idx: number) => {
       const newAnswers = [...answers.value];
-      newAnswers.splice(idx, 1)
+      newAnswers.splice(idx, 1);
       emit("input", {
         ...value.value,
         answers: newAnswers,

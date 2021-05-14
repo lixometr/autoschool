@@ -68,7 +68,7 @@
           <div class="row gx-4">
             <div class="col-auto">
               <router-link
-                :to="{ name: 'CourseEditor' }"
+                :to="{ name: 'CourseEditorDisabled' }"
                 class="btn btn-md btn-outline-primary"
                 >Units</router-link
               >

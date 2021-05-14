@@ -1,5 +1,5 @@
 <template>
-  <div class="col p-0">
+  <div class="col p-0" v-if="havePart">
     <course-editor-name
       :value="currentPart.langName"
       @input="currentPart.setLangName($event)"
@@ -49,6 +49,7 @@ import { CourseEditorEnitties, CourseEditorTypes } from "@/types/constants";
 import { computed, defineComponent, ref, toRefs } from "@vue/composition-api";
 import { plainToClass, classToPlain } from "class-transformer";
 import CourseEditorTasks from "./CourseEditorTasks.vue";
+import useRouter from "@/compositions/useRouter";
 export default defineComponent({
   components: { CourseEditorTasks, CourseEditorName, CourseEditorAddBtns },
   props: {
@@ -57,20 +58,30 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const { id, isNew } = toRefs(props);
+    const router = useRouter();
     const partId = computed(() =>
       typeof id.value !== "number" ? parseInt(id.value) : id.value
     );
     const tasks = computed(() => currentPart.value.tasks);
     const currentPart = ref({} as CourseEditorPartEntity);
-
+    const havePart = ref(false);
     const fetchPart = async () => {
       const { exec, error, result } = useApiGetCoursePart({
-        toast: { error: errorHandler() },
+        // toast: { error: errorHandler() },
         loading: true,
       });
       await exec({ id: partId.value });
-      // if (error.value) return router.push({ name: "Dashboard" });
+      if (error.value) {
+        havePart.value = false;
+        router.push({ name: "CourseEditorDisabled" });
+        return;
+      }
+      havePart.value = true;
       currentPart.value = result.value;
+      if (currentPart.value.type !== "page") {
+        router.push({ name: "CourseEditorDisabled" });
+        return;
+      }
     };
     const initData = () => {
       if (isNew.value) {
@@ -81,6 +92,8 @@ export default defineComponent({
           name: [],
           parent_id: partId.value,
         };
+        havePart.value = true;
+
         currentPart.value = plainToClass(CourseEditorPartEntity, toCreate);
       } else {
         fetchPart();
@@ -116,7 +129,7 @@ export default defineComponent({
       } else {
         await updatePart();
       }
-      emit('save')
+      emit("save");
     };
     const deletePart = async () => {
       const { exec, error } = useApiDeleteCoursePart({
@@ -142,6 +155,7 @@ export default defineComponent({
       createPart,
       updatePart,
       currentPart,
+      havePart,
     };
   },
 });

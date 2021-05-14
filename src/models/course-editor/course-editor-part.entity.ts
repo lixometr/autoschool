@@ -11,6 +11,7 @@ import { CourseEditorQuestionEntity } from './course-editor-question.entity'
 import { CourseEditorTestEntity } from './course-editor-test.entity'
 
 export class CourseEditorPartEntity {
+  id: number
   order: number
   type: 'page'
   parent_id: number

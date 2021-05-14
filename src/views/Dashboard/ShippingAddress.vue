@@ -122,6 +122,7 @@ import useRouter from "@/compositions/useRouter";
 import { useApiSendShippingAddress } from "@/api/shipping-address";
 import { errorHandler } from "@/helpers/error-handler";
 import useTranslate from "@/compositions/useTranslate";
+import { UserModule } from "@/store/modules/user";
 export default defineComponent({
   components: { CountrySelect, AppInput, StateSelect, CitySelect },
   setup() {
@@ -129,7 +130,7 @@ export default defineComponent({
       country: [null, yup.string().required()],
       zipCode: ["", yup.string().required()],
       address1: ["", yup.string().required()],
-      address2: ["", yup.string()],
+      address2: ["", yup.string().required()],
       city: [null, yup.string().required()],
       state: [null, yup.string().required()],
       fullName: ["", yup.string()],
@@ -151,6 +152,8 @@ export default defineComponent({
 
       await exec(toSend);
       if (error.value) return;
+      await UserModule.fetchUser()
+      useRouter().push({ name: "Dashboard" });
     });
     const cancel = () => {
       useRouter().push({ name: "Dashboard" });

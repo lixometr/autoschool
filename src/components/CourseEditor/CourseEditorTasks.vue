@@ -25,6 +25,7 @@ import CourseEditorElement from "./CourseEditorElement.vue";
 import { computed, defineComponent, toRefs } from "@vue/composition-api";
 import { CourseEditorItemEntity } from "@/models/course-editor/course-editor-item.entity";
 import draggable from "vuedraggable";
+import arrayMove from "@/compositions/array-move";
 export default defineComponent({
   components: { CourseEditorElement, draggable },
   props: {
@@ -53,24 +54,15 @@ export default defineComponent({
       });
       emit("input", newItems);
     };
-    function array_move(arr: any[], old_index: number, new_index: number) {
-      arr = [...arr];
-      if (new_index >= arr.length) {
-        var k = new_index - arr.length + 1;
-        while (k--) {
-          arr.push(undefined);
-        }
-      }
-      arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-      emit('input', arr)
-    }
     const moveUp = (idx: number) => {
       if (idx <= 0) return;
-      array_move(items.value, idx, idx - 1);
+      const newItems = arrayMove(items.value, idx, idx - 1);
+      emit("input", newItems);
     };
     const moveDown = (idx: number) => {
       if (idx >= items.value.length - 1) return;
-      array_move(items.value, idx, idx + 1);
+      const newItems = arrayMove(items.value, idx, idx + 1);
+      emit("input", newItems);
     };
     return {
       items,
