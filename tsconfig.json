@@ -36,7 +36,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "src/types/custom.d.ts",
-    "src/layout/default.vu"  ],
+    "src/layout/default.vu", "src/components/CourseEditor/EditorTypes/EditorTypesMixin.ts"  ],
   "exclude": [
     "node_modules"
   ],

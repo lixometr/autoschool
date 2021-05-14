@@ -12,36 +12,14 @@
         </div>
         <div class="cabinet-block__body">
           <div class="row mx-0">
-            <course-editor-sidebar :units="units"/>
-            <div class="col p-0">
-              <course-editor-name />
-              <div class="pt-2 pb-4 border-bottom border-primary">
-                <course-editor-add-btns />
-              </div>
-              <!-- // -->
-              <course-editor-element type="info" />
-              <course-editor-element type="question" />
-              <course-editor-element type="checklist" />
-              <course-editor-element type="test" />
-              <course-editor-element type="crosscheck" />
-              <course-editor-element type="checkbox" />
-
-              <div class="py-4 px-lg-5 px-3">
-                <div class="row">
-                  <div class="col-4 mb-2">
-                    <button class="btn w-100 btn-md btn-outline-primary btn-bg">
-                      {{ $t("editor.deletePartOfUnit") }}
-                    </button>
-                  </div>
-                  <div class="col"></div>
-                  <div class="col-4 mb-2">
-                    <button class="btn w-100 btn-md btn-primary">
-                      {{ $t("editor.savePartOfUnit") }}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <course-editor-sidebar v-model="units" @refresh="fetchUnits" />
+            <course-editor-controller
+              :id="$route.params.id"
+              :isNew="isNew"
+              :key="$route.params.id"
+              @delete="onPartDelete"
+              @save="fetchUnits"
+            />
           </div>
         </div>
       </div>
@@ -51,45 +29,49 @@
 
 <style  ></style>
 
-<script>
+<script lang="ts">
+import CourseEditorController from "../../components/CourseEditor/CourseEditorController.vue";
+import CourseEditorTasks from "../../components/CourseEditor/CourseEditorTasks.vue";
 import CourseEditorBack from "../../components/CourseEditor/CourseEditorBack.vue";
 import CourseEditorAddBtns from "../../components/CourseEditor/CourseEditorAddBtns.vue";
 import CourseEditorLanguages from "../../components/CourseEditor/CourseEditorLanguages.vue";
-import CourseEditorSidebar from "../../components/CourseEditor/CourseEditorSidebar.vue";
+import CourseEditorSidebar from "../../components/CourseEditor/CourseEditorSidebar/CourseEditorSidebar.vue";
 
 import CourseEditorName from "@/components/CourseEditor/CourseEditorName.vue";
-import CourseEditorElement from "@/components/CourseEditor/CourseEditorElement.vue";
-// import Search from '@/components/icons/Search.vue'
-import { useApiGetCoursePart, useApiGetUnits } from "@/api/course";
-import { errorHandler } from "@/helpers/error-handler";
-import { ref } from "@vue/composition-api";
+
+import { useApiGetUnits } from "@/api/course";
+import { computed, ref, toRefs, watch } from "@vue/composition-api";
 import useRouter from "@/compositions/useRouter";
+import { CourseEditorPartEntity } from "@/models/course-editor/course-editor-part.entity";
+import { errorHandler } from "@/helpers/error-handler";
+import { plainToClass } from "class-transformer";
 export default {
   components: {
     CourseEditorSidebar,
     CourseEditorLanguages,
-    CourseEditorName,
-    CourseEditorAddBtns,
-    CourseEditorElement,
     CourseEditorBack,
+    CourseEditorController,
   },
-  setup() {
+  props: {
+    isNew: Boolean,
+  },
+  setup(props) {
+    const { isNew } = toRefs(props);
     const router = useRouter();
-    const currentPart = ref({});
+    const partId = computed(() => parseInt(router.currentRoute.params.id));
     const { exec: fetchUnits, error, result: units } = useApiGetUnits({
       toast: { error: errorHandler() },
     });
     fetchUnits();
-    const fetchPart = async () => {
-      const { exec, error, result } = useApiGetCoursePart({
-        toast: { error: errorHandler() },
-      });
-      await exec({ id: router.currentRoute.params.id });
-      // if (error.value) return router.push({ name: "Dashboard" });
-      currentPart.value = result.value;
+    const onPartDelete = () => {
+      // const newId = 0;
+      // router.push({name: "CourseEditor", params: {id: newId}})
+      fetchUnits();
+      return;
     };
-    fetchPart();
-    return { units, currentPart };
+
+    return { partId, fetchUnits, units, onPartDelete };
   },
 };
 </script>
+

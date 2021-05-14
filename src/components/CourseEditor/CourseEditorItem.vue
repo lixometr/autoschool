@@ -1,6 +1,6 @@
 <template>
   <div class="pb-4 border-bottom border-primary">
-    <div class="control-line px-lg-5 px-3">
+    <div class="control-line px-lg-5 px-3 course-editor-item-header">
       <div class="row">
         <div class="col h5 mb-0 strong">{{ title }}</div>
         <div class="col-auto">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="pt-4 px-lg-5 px-3">
+    <div class="pt-4 px-lg-5 px-3" :class="contentClass">
       <slot />
     </div>
   </div>
@@ -39,6 +39,8 @@ export default defineComponent({
   components: { ArrowUp, ArrowDown, Close },
   props: {
     title: String,
+    hasTitle: Boolean,
+    contentClass: [String, Array, Object]
   },
   setup(props, { emit }) {
     const putUp = () => {
@@ -63,4 +65,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.course-editor-item-header {
+  cursor: move;
+}
 </style>

@@ -4,10 +4,11 @@ import { CourseEditorItemEntity } from './course-editor-item.entity'
 
 export class CourseEditorTestAnswerEntity {
   value: string
-  is_correct: boolean
+  sub_id: number
 }
 export class CourseEditorTestQuestionEntity {
   value: string
+  correct: number
   @Type(() => CourseEditorTestAnswerEntity)
   answers: CourseEditorTestAnswerEntity[]
 }
@@ -21,5 +22,5 @@ export class CourseEditorTestContentEntity {
 export class CourseEditorTestEntity extends CourseEditorItemEntity {
   type: CourseEditorTypes.test
   @Type(() => CourseEditorTestContentEntity)
-  content: CourseEditorTestContentEntity[]
+  declare content: CourseEditorTestContentEntity[]
 }

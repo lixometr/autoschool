@@ -28,6 +28,7 @@
         "btn": "Login"
     },
     "inputs": {
+        "language": "Name of language",
         "lastName": "Last name",
         "firstName": "First name",
         "middleName": "Middle name",
@@ -50,6 +51,13 @@
     },
     "personalCabinet": {
         "title": "Personal cabinet"
+    },
+    "addLanguage": {
+        "title": "Add new language"
+    },
+    "changeUnitTime": {
+        "timeForTasks": "Time for tasks",
+        "title": "Add time of part"
     },
     "shippingAddress": {
         "title": "Fill out personal information",
@@ -118,7 +126,23 @@
         "addLanguage": "Add language",
         "deletePartOfUnit": "Delete part of unit",
         "savePartOfUnit": " Save part of unit",
-        "addUnit": "Add unit"
+        "addUnit": "Add unit",
+        "succesUpdate": "Course was successfully updated",
+        "headline": "Headline",
+        "answerOptions": "Answer options",
+        "addPartOf": "Add part of ",
+        "namePartOfUnit": "Name part of unit ",
+        "addAnswer": "Add answer",
+        "addQuestion": "Add question",
+        "checklistCaption": "All questions and answers in the unit will be placed in random order"
+    },
+    "editorTypes": {
+        "question": "Question",
+        "checklist": "Checklist",
+        "info": "Info",
+        "test": "Test",
+        "crosscheck": "Crosscheck",
+        "checkbox": "Checkbox"
     },
     "up": "Up",
     "down": "Down",
@@ -131,11 +155,18 @@
     "cancel": "Cancel",
     "askQuestion": "Ask a question",
     "question": "Question",
+    "answer": "Answer",
     "messageSent": "Your message was sent",
     "search": "Search",
     "add": "Add",
     "save": "Save",
+    "change": "Change",
+    "min": "min",
     "backToDashboard": "Back to dashboard",
+    "true": "True",
+    "false": "False",
+    "no": "No",
+    "yes": "Yes",
     "dashboard": {
         "downloadNotification": "Download notification"
     }

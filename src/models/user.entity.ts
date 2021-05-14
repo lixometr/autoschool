@@ -12,9 +12,10 @@ export class UserEntity {
     id: number
     roles?: DataResponse<RoleEntity[]>
     verification_status: {
-        personal_data_filled: false
-        questions_answered: false
-        shipping_address_filled: false
+        personal_data_filled: boolean
+        questions_answered: boolean
+        shipping_address_filled: boolean
+        keystroke_signature_enrolled: boolean
     }
 
     get role() {

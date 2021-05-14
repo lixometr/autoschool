@@ -1,21 +1,26 @@
 <template>
   <course-editor-item :title="title" v-on="$listeners">
-    <label class="input-wrap">
-      <textarea name="" class="form-control">developer add plugin</textarea>
-    </label>
+    <text-editor :value="value.value" @input="onChangeValue('value', $event)" />
   </course-editor-item>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import TextEditor from "../../TextEditor/TextEditor.vue";
+import { defineComponent, toRefs } from "@vue/composition-api";
 import CourseEditorItem from "../CourseEditorItem.vue";
+import EditorTypesMixin from "./EditorTypesMixin";
 
 export default defineComponent({
   props: {
     title: String,
+    value: {
+      type: Object,
+      default: () => ({}),
+    },
   },
-  components: { CourseEditorItem },
-  setup() {
+  mixins: [EditorTypesMixin],
+  components: { CourseEditorItem, TextEditor },
+  setup(props, { emit }) {
     return {};
   },
 });

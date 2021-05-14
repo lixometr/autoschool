@@ -1,13 +1,10 @@
 import { CourseEditorTypes } from '@/types/constants'
 import { Type } from 'class-transformer'
 import { CourseEditorItemEntity } from './course-editor-item.entity'
-export class CourseEditorChecklistAnswerEntity {
-  sub_id: number
-  value: string
-}
+
 
 export class CourseEditorChecklistQuestionEntity {
-  correct: number
+  is_correct: number
   value: string
 }
 
@@ -17,12 +14,11 @@ export class CourseEditorChecklistContentEntity {
   @Type(() => CourseEditorChecklistQuestionEntity)
   questions: CourseEditorChecklistQuestionEntity[]
 
-  @Type(() => CourseEditorChecklistAnswerEntity)
-  answers: CourseEditorChecklistAnswerEntity[]
+  
 }
 
 export class CourseEditorChecklistEntity extends CourseEditorItemEntity {
   type: CourseEditorTypes.checklist
   @Type(() => CourseEditorChecklistContentEntity)
-  content: CourseEditorChecklistContentEntity[]
+  declare content: CourseEditorChecklistContentEntity[]
 }

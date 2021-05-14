@@ -18,5 +18,5 @@ export class CourseEditorCheckboxContentEntity {
 export class CourseEditorCheckboxEntity extends CourseEditorItemEntity {
   type: CourseEditorTypes.checkbox
   @Type(() => CourseEditorCheckboxContentEntity)
-  content: CourseEditorCheckboxContentEntity[]
+  declare content: CourseEditorCheckboxContentEntity[]
 }

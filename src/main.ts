@@ -9,6 +9,7 @@ import "@/libs/vue-cookie"
 
 import "@/libs/vue-final-modal"
 import "@/libs/vue-select"
+// import "@/libs/ck-editor"
 
 import i18n from "@/libs/vue-i18n"
 

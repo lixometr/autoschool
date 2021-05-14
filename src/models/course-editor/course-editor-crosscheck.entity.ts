@@ -2,23 +2,29 @@ import { CourseEditorTypes } from '@/types/constants'
 import { Type } from 'class-transformer'
 import { CourseEditorItemEntity } from './course-editor-item.entity'
 
-export class CourseEditorCrosscheckPartEntity {
+export class CourseEditorCrosscheckFirstPartEntity {
   sub_id: number
   value: string
   correct: number
 }
+export class CourseEditorCrosscheckSecondPartEntity {
+  sub_id: number
+  value: string
+  correct: number
+
+}
 
 export class CourseEditorCrosscheckContentEntity {
   lang: string
-  @Type(() => CourseEditorCrosscheckPartEntity)
-  first_part: CourseEditorCrosscheckPartEntity[]
+  @Type(() => CourseEditorCrosscheckFirstPartEntity)
+  first_part: CourseEditorCrosscheckFirstPartEntity[]
 
-  @Type(() => CourseEditorCrosscheckPartEntity)
-  second_part: CourseEditorCrosscheckPartEntity[]
+  @Type(() => CourseEditorCrosscheckSecondPartEntity)
+  second_part: CourseEditorCrosscheckSecondPartEntity[]
 }
 
 export class CourseEditorCrosscheckEntity extends CourseEditorItemEntity {
   type: CourseEditorTypes.crosscheck
   @Type(() => CourseEditorCrosscheckContentEntity)
-  content: CourseEditorCrosscheckContentEntity[]
+  declare content: CourseEditorCrosscheckContentEntity[]
 }

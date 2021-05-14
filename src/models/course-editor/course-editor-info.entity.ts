@@ -10,5 +10,5 @@ export class CourseEditorInfoContentEntity {
 export class CourseEditorInfoEntity extends CourseEditorItemEntity {
   type: CourseEditorTypes.info
   @Type(() => CourseEditorInfoContentEntity)
-  content: CourseEditorInfoContentEntity[]
+  declare content: CourseEditorInfoContentEntity[]
 }
