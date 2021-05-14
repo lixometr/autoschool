@@ -7,7 +7,7 @@ export class CourseEditorUnitEntity {
   id: number
   order: number
   type: 'unit'
-  @Type(() =>  CourseEditorPartEntity)
+  @Type(() => CourseEditorPartEntity)
   pages?: CourseEditorPartEntity[]
 
   @Type(() => CourseEditorLangValueEntity)
@@ -17,6 +17,19 @@ export class CourseEditorUnitEntity {
     const activeItem = this.name.find((item) => {
       return item.lang === activeLang
     })
-    return activeItem || {}
+    return activeItem || ({} as CourseEditorLangValueEntity)
+  }
+  setLangName(value: any) {
+    const activeLang = CourseModule.activeLanguage
+    const idx = this.name.findIndex((item) => {
+      return item.lang === activeLang
+    })
+    let newName = [...this.name]
+    if (idx < 0) {
+      newName.push(value)
+    } else {
+      newName[idx] = value
+    }
+    this.name = newName
   }
 }

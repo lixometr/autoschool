@@ -2,7 +2,7 @@
   <div>
     <div class="row gx-2 align-items-center">
       <div class="col">
-        <div class="h5 strong">
+        <div class="h5 strong cursor-pointer" @click="editName">
           {{ unit.langName.value }}
           <Close class="cursor-pointer" @click.native="removeUnit(unit.id)" />
         </div>
@@ -158,7 +158,20 @@ export default defineComponent({
       router.push({ name: "CourseEditorDisabled" });
       fetchUnits();
     };
+    const editName = () => {
+      const { showByName } = useModal();
+      showByName(ModalName.changeUnitName, {
+        props: {
+          id: unit.value.id,
+          unit: unit.value,
+        },
+        on: {
+          send: () => fetchUnits(),
+        },
+      });
+    };
     return {
+      editName,
       addPart,
       changeUnitTime,
       goToPart,

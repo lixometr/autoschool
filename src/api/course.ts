@@ -3,6 +3,7 @@ import useTransfomer from '@/compositions/useTransfomer'
 import { CreateCoursePartDto } from '@/dto/course-editor/create-course-part.dto'
 import { CreateCourseUnitDto } from '@/dto/course-editor/create-course-unit.dto'
 import { UpdateCoursePartOrderDto } from '@/dto/course-editor/update-course-part-order.dto'
+import { CourseEditorLangValueEntity } from '@/models/course-editor/course-editor-lang-value.entity'
 import { CourseEditorPartEntity } from '@/models/course-editor/course-editor-part.entity'
 import { CourseEditorUnitEntity } from '@/models/course-editor/course-editor-unit.entity'
 import { DataResponse } from '@/models/data.response'
@@ -75,6 +76,17 @@ export const useApiUpdateUnitTime = (opts?: UseApiOptions) =>
       method: 'PUT',
       data: {
         passing_time: passingTime,
+      },
+    }),
+    opts,
+  )
+export const useApiUpdateUnitName = (opts?: UseApiOptions) =>
+  useApi<{ name: CourseEditorLangValueEntity[]; id: number }, any>(
+    ({ id, name }) => ({
+      url: `/v1/course/${id}`,
+      method: 'PUT',
+      data: {
+        name,
       },
     }),
     opts,

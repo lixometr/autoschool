@@ -134,7 +134,8 @@
         "namePartOfUnit": "Name part of unit ",
         "addAnswer": "Add answer",
         "addQuestion": "Add question",
-        "checklistCaption": "All questions and answers in the unit will be placed in random order"
+        "checklistCaption": "All questions and answers in the unit will be placed in random order",
+        "unitName": "Unit name"
     },
     "editorTypes": {
         "question": "Question",
