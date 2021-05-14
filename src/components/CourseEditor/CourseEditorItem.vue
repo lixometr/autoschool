@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="pt-4 px-lg-5 px-3" :class="contentClass">
+    <div class="pt-4 px-3" :class="contentClass">
       <slot />
     </div>
   </div>

@@ -65,7 +65,7 @@ export default defineComponent({
         answersToSend.push({
           question_id: parseInt(questionId),
           answer_id: answers.value[questionId],
-          answer: currentAnswer?.answer,
+          value: currentAnswer?.answer,
         });
       });
       return { answers: answersToSend };
