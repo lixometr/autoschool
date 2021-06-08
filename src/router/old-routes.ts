@@ -206,6 +206,12 @@ export const oldRoutes: Array<RouteConfig> = [
       import(/* webpackChunkName: "Contacts" */ '../oldViews/cabinet/Q3.vue'),
   },
   {
+    path: '/Q4',
+    name: '/Q4',
+    component: () =>
+      import(/* webpackChunkName: "Contacts" */ '../oldViews/cabinet/Q4.vue'),
+  },
+  {
     path: '/Result',
     name: '/Result',
     component: () =>
