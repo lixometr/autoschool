@@ -1,18 +1,39 @@
 <template>
   <div class="col-lg-auto">
-    <button class="btn-alert btn-danger-light" v-if="shipping" @click="goTo('ShippingAddress')">
+    <button
+      class="btn-alert btn-danger-light"
+      v-if="shipping"
+      @click="goTo('ShippingAddress')"
+    >
       <Warning />
       <span>Shipping Address</span>
     </button>
     <br />
-    <button class="btn-alert btn-danger-light" v-if="sequrityQuestions" @click="goTo('SecurityQuestions')">
+    <button
+      class="btn-alert btn-danger-light"
+      v-if="sequrityQuestions"
+      @click="goTo('SecurityQuestions')"
+    >
       <Warning />
       <span>Setup Security Questions</span>
     </button>
     <br />
-    <button class="btn-alert btn-danger-light" v-if="personalData" @click="goTo('PersonalData')">
+    <button
+      class="btn-alert btn-danger-light"
+      v-if="personalData"
+      @click="goTo('PersonalData')"
+    >
       <Warning />
       <span>Your Personal Data</span>
+    </button>
+    <br>
+    <button
+      class="btn-alert btn-danger-light"
+      v-if="keyStroke"
+      @click="goTo('KeyStroke')"
+    >
+      <Warning />
+      <span>Keystroke Verification</span>
     </button>
   </div>
 </template>
@@ -22,6 +43,8 @@ import { computed, defineComponent } from "@vue/composition-api";
 import Warning from "@/components/icons/Warning.vue";
 import { UserModule } from "@/store/modules/user";
 import useRouter from "@/compositions/useRouter";
+import useModal from "@/compositions/useModal";
+import { ModalName } from "@/types/modal.enum";
 
 export default defineComponent({
   components: { Warning },
@@ -35,11 +58,19 @@ export default defineComponent({
     const personalData = computed(
       () => !UserModule.user.verification_status.personal_data_filled
     );
+    const keyStroke = computed(
+      () => !UserModule.user.verification_status.keystroke_signature_enrolled
+    );
     const goTo = (name: string) => {
-      const router = useRouter()
-      router.push({name})
-    }
-    return { shipping, sequrityQuestions, personalData, goTo };
+      if (name === "KeyStroke") {
+        const { showByName } = useModal();
+        showByName(ModalName.keystrokeRegister);
+        return
+      }
+      const router = useRouter();
+      router.push({ name });
+    };
+    return { shipping, sequrityQuestions, personalData, goTo, keyStroke };
   },
 });
 </script>

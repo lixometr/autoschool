@@ -48,12 +48,6 @@ must be given to the Motor Vehicle License Examiner when you appear for the road
 								<div class="col">
 									<div class="h6 strong pb-3">What actions will lead to the cancellation of the license</div>
 
-									
-
-
-
-
-
 									<label class="form-check">
 										<input class="form-check-input" type="checkbox" name="flexRadioDefault"  >
 										<span class="form-check-label" >speeding </span>

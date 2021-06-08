@@ -12,6 +12,7 @@
         'is-valid': !errors.length && showValid,
         ...inputClass,
       }"
+      ref="el"
     />
     <div class="invalid-feedback" v-for="(error, idx) in errors" :key="idx">
       {{ error }}

@@ -59,6 +59,9 @@
         "timeForTasks": "Time for tasks",
         "title": "Add time of part"
     },
+    "changeUnitName": {
+        "title": "Change name"
+    },
     "shippingAddress": {
         "title": "Fill out personal information",
         "subTitle": "PROVIDE ALL INFORMATION STRICTLY AS appear on the learners permit",
@@ -145,6 +148,13 @@
         "crosscheck": "Crosscheck",
         "checkbox": "Checkbox"
     },
+    "course": {
+        "downloadMaterial": "Download material",
+        "print": "Print"
+    },
+    "nextPage": "Next Page",
+    "units": "Units",
+    "support": "Support",
     "up": "Up",
     "down": "Down",
     "delete": "Delete",
@@ -168,6 +178,7 @@
     "false": "False",
     "no": "No",
     "yes": "Yes",
+    "select": "Select",
     "dashboard": {
         "downloadNotification": "Download notification"
     }

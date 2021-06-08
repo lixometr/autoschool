@@ -30,7 +30,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-const noAuthList = ['Home', 'About', 'FAQ', 'нSignUp', 'Contacts', 'Partnership']
+const noAuthList = ['Home', 'About', 'FAQ', 'SignUp', 'Contacts', 'Partnership']
 router.beforeEach((to, from, next) => {
   if (!noAuthList.includes(to.name) && to.meta?.noAuth !== true) {
     if (!UserModule.isAuth) {

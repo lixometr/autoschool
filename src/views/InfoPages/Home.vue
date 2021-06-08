@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <HeaderBlock />
     <SRegister />
     <SAbout />
@@ -20,7 +20,10 @@ import SWhatWillLearn from "@/components/SWhatWillLearn.vue";
 import SPromocode from "@/components/SPromocode.vue";
 import SModules from "@/components/SModules.vue";
 import SReady from "@/components/SReady.vue";
-import { defineComponent } from "@vue/composition-api";
+import { computed, defineComponent } from "@vue/composition-api";
+import useModal from "@/compositions/useModal";
+import { ModalName } from "@/types/modal.enum";
+import useRouter from "@/compositions/useRouter";
 
 export default defineComponent({
   name: "Home",
@@ -33,6 +36,11 @@ export default defineComponent({
     SPromocode,
     SModules,
     SReady,
+  },
+  setup() {
+    const { showByName } = useModal();
+
+    showByName(ModalName.login);
   },
 });
 </script>

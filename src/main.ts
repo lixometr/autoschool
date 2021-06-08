@@ -18,6 +18,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import "@/libs/load-script"
+
+
 import "@/libs/vue-click-outside"
 import "@/libs/vue-moment"
 import "@/libs/vue-meta"

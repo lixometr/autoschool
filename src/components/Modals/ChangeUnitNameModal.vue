@@ -4,7 +4,7 @@
       <Close />
     </button>
     <form action="#" @submit.prevent="onSubmit">
-      <div class="h5 strong mb-3">{{ $t("addLanguage.title") }}</div>
+      <div class="h5 strong mb-3">{{ $t("changeUnitName.title") }}</div>
       <app-input
         :label="$t('editor.unitName')"
         v-model="values.name"
